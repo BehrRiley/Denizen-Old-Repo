@@ -30,3 +30,10 @@ NextPageArrow:
       - HIDE_PLACED_ON
   display name: <&a>▶ <&2>N<&a>ext <&2>P<&a>age <&2>▶
   no-id: true
+
+Blank:
+  type: item
+  debug: false
+  material: black_stained_glass_pane
+  display name: " "
+  no-id: true
