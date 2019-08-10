@@ -48,7 +48,7 @@ Open_Bank_Admin:
   ErrorObjection:
     - define key "<&4>invalid character<&co><&nl><&c><[Player]||null>"
     - narrate format:bbf "Internal error <&pipe> <&c><proc[msgHover].context[<&c>Invalid Character|<[key]>]>"
-    - queue clear
+    - stop
   script:
   - inject locally UserVerification instantly
   - define BankID <[BankID]||1>
@@ -59,13 +59,13 @@ Open_Bank_Admin:
   - note "in@generic[title=<[title]>;size=54]" as:<[pBank]>
   - define items <yaml[pBankKey].read[<[User].uuid>.<[BankID]>]||null>
   - if <[BankID]> > 1:
-    - define LeftArrow i@BankLeftArrow[nbt=li@BankID/<[BankID].sub[1]>|PlayerID/<[Player]>]
+    - define LeftArrow i@LastPageArrow[nbt=li@BankID/<[BankID].sub[1]>|PlayerID/<[Player]>]
   - else:
     - define LeftArrow i@blank
   - if <[bankID]> == 10:
     - define RightArrow i@blank 
   - else:
-    - define RightArrow i@BankRightArrow[nbt=li@BankID/<[BankID].add[1]>|PlayerID/<[Player]>]
+    - define RightArrow i@NextPageArrow[nbt=li@BankID/<[BankID].add[1]>|PlayerID/<[Player]>]
   - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|<[RightArrow]>"
   - inventory set d:in@<[pBank]> o:<[SoftMenu]> slot:46
   - if <[items]> != null:
