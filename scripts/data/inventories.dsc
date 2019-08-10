@@ -91,3 +91,53 @@ SpellbookHandler:
       - if <context.item.contains_any[<[Spellbooks]>]>:
           - inventory open d:in@<context.item.after[;script=].before[_item]>_Inventory
           - determine passively cancelled
+          
+# temp until depricate
+BasicSpellbook_Inventory:
+  type: inventory
+  debug: false
+  inventory: dispenser
+  title: Spellbook | Basic Spells
+  size: 9
+  slots:
+  - "[i@AirStrike] [i@WaterStrike] [i@VexStrike]"
+  - "[i@FireStrike] [i@blank] [i@blank]"
+  - "[i@blank] [i@blank] [i@BackArrow]"
+IntermediateSpellbook_Inventory:
+  type: inventory
+  debug: false
+  inventory: dispenser
+  title: Spellbook | Intermediate Spells
+  size: 9
+  slots:
+  - "[i@AirBolt] [i@WaterBolt] [i@Fratility]"
+  - "[i@Leech] [i@FireBolt] [i@blank]"
+  - "[i@blank] [i@blank] [i@BackArrow]"
+AdvancedSpellbook_Inventory:
+  type: inventory
+  debug: false
+  inventory: dispenser
+  title: Spellbook | Advanced Spells
+  size: 9
+  slots:
+  - "[i@CrumbleUndead] [i@WindBlast] [i@WaterBlast]"
+  - "[i@Decrepify] [i@Ibanblast] [i@MagicDart]"
+  - "[i@FireBlast] [i@blank] [i@BackArrow]"
+ExpertSpellbook_Inventory:
+  type: inventory
+  debug: false
+  inventory: dispenser
+  title: Spellbook | Expert Spells
+  slots:
+  - "[i@WindWave] [i@WaterWave] [i@VexSomethingI]"
+  - "[i@FireWave] [i@blank] [i@blank]"
+  - "[i@blank] [i@blank] [i@BackArrow]"
+MasterSpellbook_Inventory:
+  type: inventory
+  debug: false
+  inventory: dispenser
+  title: Spellbook | Master Spells
+  slots:
+  - "[i@WindSurge] [i@WaterSurge] [i@VexSomethingII]"
+  - "[i@FireSurge] [i@blank] [i@blank]"
+  - "[i@blank] [i@blank] [i@BackArrow]"
