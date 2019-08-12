@@ -11,11 +11,11 @@ Hans:
     - trigger name:proximity state:true radius:4
     - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
     on exit proximity:
-      - if <player.flag[interacting_npc]> == <queue.script.name>:
+      - if <player.flag[interacting_npc]> == <script.name>:
         - flag player interacting_npc:!
     on click:
-      - if <player.flag[interacting_npc]> == <queue.script.name>:
-        - flag player interacting_npc:<queue.script.name>
+      - if <player.flag[interacting_npc]> == <script.name>:
+        - flag player interacting_npc:<script.name>
       - narrate format:npc "Hello. What are you doing here?"
       - inject locally GenericGreeting Instantly
   GenericGreeting:
