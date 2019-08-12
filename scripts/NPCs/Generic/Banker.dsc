@@ -10,12 +10,14 @@ Banker:
     on assignment:
       - trigger name:click state:true
       - trigger name:proximity state:true radius:4
-      - adjust <npc> skin_blob:<server.flag[npc_skins.banker<util.random.int[1].to[2]>]>
+      - adjust <npc> skin_blob:<server.flag[npc.skin.banker<util.random.int[1].to[2]>]>
     on exit proximity:
-      - flag player interacting_npc:!
+      - if <player.flag[interacting_npc]> == <script.name>:
+        - flag player interacting_npc:!
     on click:
-      - if !<player.has_flag[BankerNPC_stage]>:
-        - flag player interacting_npc:<queue.script>
+      - if <player.flag[interacting_npc]> == <script.name>:
+        - flag player interacting_npc:<script.name>
+      
       #- if <player.has_flag[GrandExchange.collection.alert]>:
       #  - narrate format:npc "Good day. Before we go any further, I should inform you that you have items ready for collection from the Grand Exchange. How may i help you?"
       #- else:
