@@ -16,6 +16,7 @@ Hans:
     on click:
       - if <player.flag[interacting_npc]> == <script.name>:
         - flag player interacting_npc:<script.name>
+        
       - narrate format:npc "Hello. What are you doing here?"
       - inject locally GenericGreeting Instantly
   GenericGreeting:
