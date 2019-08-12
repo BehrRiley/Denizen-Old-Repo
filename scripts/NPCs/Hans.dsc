@@ -11,18 +11,18 @@ Hans:
     - trigger name:proximity state:true radius:4
     - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
     on exit proximity:
-      - if <player.has_flag[Hans_stage]>:
+      - if <player.flag[interacting_npc]> == <queue.script.name>:
         - flag player interacting_npc:!
     on click:
-      - if !<player.has_flag[Hans_stage]>:
-        - flag player interacting_npc:<queue.script>
+      - if <player.flag[interacting_npc]> == <queue.script.name>:
+        - flag player interacting_npc:<queue.script.name>
       - narrate format:npc "Hello. What are you doing here?"
       - inject locally GenericGreeting Instantly
   GenericGreeting:
     - wait 2s
     #- define Options_List "<list[I'd like to access my bank account, please|I'd like to check my pin settings|i'd like to see my collection box|What is this place?]>"
     - define Options_List "<list[I'm looking for whoever is in charge of this place.|I have come to kill everyone in this castle!|I don't know. I'm lost. Where am i?|Can you tell me how long I've been here?]>"
-    - define Trigger_List "<list[|||]>"
+    - define Trigger_List "<list[who|kill|where|how]>"
     - inject Trigger_Option_builder Instantly
   interact scripts:
     - Hans_Interact
