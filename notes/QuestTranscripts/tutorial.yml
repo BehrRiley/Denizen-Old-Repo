@@ -1,0 +1,317 @@
+# ███████████████████████████████████████████████████████████
+# ██   **Custom script paths to be injected/run**
+# ██   /npc assignment --set Gielinor_Guide 
+# ██ 
+# ██ [ NPC Assignment ] ██
+Gielinor_Guide: 
+  type: assignment 
+  debug: true 
+  actions: 
+    on assignment: 
+    - trigger name:click state:true 
+    - trigger name:proximity state:true radius:4
+    on exit proximity:
+    - flag player interacting_npc:!
+    - flag player sig:!
+    on click:
+      - if !<player.has_flag[Gielinor_Guide_stage]>:
+        - flag player interacting_npc:<queue.script>
+      - inject locally NPC_Initiation_script
+
+
+## ███████████████████████████████████████████████████████████
+## ██    Script Processing for command chat hover procedure
+## ██   
+#  opt_loop: 
+#  - define sig <util.random.uuid> 
+#  - flag player sig:<def[sig]> 
+#  - foreach <script.yaml_key[<def[1]>]>: 
+#    - define value <def[value].split[/].limit[2]> 
+#    - define interacting <player.flag[interacting_npc]>
+#    - narrate "<proc[option].context[<def[value].get[2]>|<def[value].get[1]>|<npc||<def[2]>>|<def[sig]>|<def[interacting]>]>" 
+## ██
+## ██   This does not change.
+## ███████████████████████████████████████████████████████████
+
+
+
+# ███████████████████████████████████████████████████████████
+# ██   Custom script paths to be injected/run 
+# ██   
+# ██   [ Selection Process Selection ]
+  NPC_Initiation_script:
+  - narrate format:cgf "<script.yaml_key[d1]>"
+  - wait 2s
+  - run locally opt_loop def:o1 instantly
+
+  Script_Process_Hello:
+  - narrate format:cgf "<script.yaml_key[d2]>"
+
+  Script_Process_Goodbye:
+  - narrate format:cgf "<script.yaml_key[d3]>"
+
+
+# ███████████████████████████████████████████████████████████
+# ██   Custom script paths to be injected/run 
+# ██   
+# ██   [ Option Selections ]
+  o1: 
+  - "Script_Process_Hello/<&a>Hello"
+  - "Script_process_Goodbye/<&a>Goodbye"
+
+
+# ███████████████████████████████████████████████████████████
+# ██   Dialog Transcripts to be narrated
+# ██   
+# ██ [ NPC dialogue ] ██
+# ██ [ Gielinor Guide ] ██
+  d1: Greetings! I see you are a new arrival to the world of Gielinor. Myh job is to welcome all new visitors. So welcome! You have already learned the first thing needed to succeed in this world: Talking to other people! You will find many inhabitants of this world have useful things to say to you. By clicking on them you can talk to them. Before we get going, if you could be so kind to let me know how much experience you have with Old School Runescape, that would be wonderful.
+  d2: Wonderful! Thank you.
+  d3: Now then, let's start by looking at your options menu.
+  u4: right click on the flashing spanner icon found at the bottom right of your screen. This will display your options menu.
+  u5: on the side panel, you can now see a variety of game options such as screen brightness and music volume. Don't worry about these too much for now, they will become clearer as you explore the game. Talk to the Gielinor Guide to continue.
+  d6: Looks like you're making good progress! The menu you just opened is one of many. You'll learn about the rest as you progress through the tutorial.
+  d7: Anyway, i'd say it's time for you to go and meet your first instructor!
+  u8: it's time to meet your first instructor. To continue, all you need to do is click on the door. [marked with arrow]
+  u9: follow the path to the next instructor. Talk to the survival expert to continue the tutorial.
+
+# ██ [ Survival Expert ] ██
+  d1: Hello there, newcomer. My name is Brynna. My job is to teach you about the skills you can use to survive in this world.
+  d2: The first skill we're going to look at is Fishing. There's some shrimp in this pond here. Let's try and catch some.
+  u3: - gives you a small fishing yet -
+  u4: to view the item you've been given, you'll need to open your inventory. To do so, click on the flashing backpack icon to the right hand side of your screen.
+  u5: This is your inventory. You can view all of your items here, including the net youve just beeen given. Lets use it to catch some shrimp. To start fishing, just click on the sparkling fishing spot, indicated by the flashing arrow.
+  u6: On this menu, you can view your skills. Your skills can be leveled up by earning experience, which is gained by performing various activities. As you level up your skills, you will earn new unlocks. Speak to the survival expert to continue.
+  p7: I managed to catch some shrimp.
+  d8: Excellent work. Now that you have some shrimp, you're going to want to cook them. To do that, you'll need a fire. that brings us on to the woodcutting and firemaking skills.
+  u9: the survival expert gives you a bronze axe and a tinderbox.
+  u10: It's time to cook your shrimp. However, you require a fire to do that which means you need some logs.  You can cut down trees using your woodcutting skill, all you need is an axe. Give it a go by clicking on one of the trees in the area.
+  u11: You managed to cut some logs.
+  u12: Now that you have some logs, its time to light a fire. First, click on the tinderbox in your inventory. Then, with the tinderbox highlighted, click on the logs to use the tinderbox on them.
+  u13: now its time to get cooking. To do so, click on the shrimp in your inventory. Then, with the shrimp highlighted, click on a fire to cook them. If you look at the top left of the screen, you'll see the instructions that you're giving to your character.
+  u14: you managed to cook some shrimp
+  u15: well done, you've just cooked your first meal! speak to the survival expert if you want a recap, otherwise you can move on. Click on the gate shown and follow the path.
+  d16: hello again. is there something you'd like to hear more about?
+
+    - tell me about my skills again
+      d17: every skill is listed in the skills menu. Here you can see what your current levels are and how much experience you have.
+      d18: as you move your mouse over the various skills the small yellow popup box will show you the exact amount of experience you have and how much is needed to get to the next level.
+      d19: you can also click on a skill to open up the relevant skillguide. In the skillguide, you can see all of the unlocks available in that skill.
+      d20: is there anything else you'd like to hear more about?
+
+    - tell me about woodcutting again
+        d21: woodcutitng, eh? Don't worry, newcomer, it's really very easy. Simply equip your axe and click on a nearby tree to chop away.
+        d22: as you explore the mainlands you will discover many different kinds of trees that will require different woodcutting levels to chop down.
+        d23: Logs are not only useful for making fires. Many archers use the skill known Fletching to craft their own bows and arrows from trees.
+
+    - tell me about firemaking again
+      d24: certainly, newcomer. When you have logs simply use your tinderbox on them. If successful, you will start a fire.
+      d25: you can also set fire to logs you find lying on the floor already, and some other trhings can also be set alight...
+      d26: A tinderbox is always a useful item to keep around!
+    - more options
+
+    - tell me about fishing again
+      d27: Ah, yes. Fishing! Fishing is undoubtedly one of the more popular hobbies here in Gielinor!
+      d28: whenever you see sparkling waters, you can be sure there's probably some good fishing to be had there!
+      d29: not only are fish absolutely delicious when cooked, they will also heal lost health.
+      d30: i would recommend everbody has a go at Fishing at least once in their lives!
+        d20
+
+    - tell me about cooking again
+      d31: yes, the most basic of survival techniques. Most simple foods can be used on a fire to cook them. If you're feeling a bit fancier, you can also use a range to cook the food instead.
+      d32: eating cooked food will restore lost health. The harder something is to cook, the more it will heal you.
+      d33: 
+    - nothing thanks
+    - previous options
+
+  u34: follow the path until you get to the door with the yellow arrow above it. Click on the door to open it.
+
+
+# ██ [ Master Chef dialogue ] ██
+  u1: Talk to chef indicated. He will teach you the more advanced aspects of Cooking such as combining ingredients.
+  d2: Ah! Welcome, newcomer. I am the Master Chef, Lev. It is here that I will teach you how to cook food truly fit for a king.
+  p3: I already know how to cook. Brynna taught me just now.
+  d4: Hahahahahaha! You call THAT cooking? Some shrimp on an open log fire? Oh, no, no, no. I am going to teach you the fine art of cooking bread.
+  u5: The master chef gives you some flour and a bucket of water.
+  u6: This is the base for many meals. To make dough, you must mix flour with water. To do so, click on the flour in your inventory. Then, with the flour highlighted, click on the water to combine them into dough.
+  d5: Time for you to learn the fine art of cooking bread.
+  u6: you make some dough.
+  u7: Now you have made the dough, you can bake it into some bread. To do so, just click on the indicated range.  
+  u8: you manage to make some bread.
+  u9: Well done! You've baked your first loaf of bread. As you gain experience in cooking, you will be able to make other things like pies and cakes. You can now use the next doors to move on. If you need a recap on anything, talk to the master chef.
+  d10: Do you need something?
+    - tell me about making dough again
+      d11: it's quite simple. JKust use a pot of flour on a bucket of water, or vice versa, and you'll make dough. you can fill a bucket with water at any sink.
+      d12: Do you need anything else?
+    - tell me about range cooking again
+      d13: the range is the only place you can cook a lot of the more complex foods in Gielinor. To cook on a range, all you need to do is click on it. You'll need to make sure you have the required items in your inventory though.
+      d12:
+# ██ [ Quest Guide dialogue ] ██
+  u1: It's time to learn about quests! Just talk to thje quest guide to get started.
+  d2: Ah. Welcome, adventurer. I'm here to tell you all about quests. Let's start by opening your quest journal.
+  u3: Click on the flashing icon to the left of your inventory
+  u4: This is your quest journal. It lists every quest in the game. Talk to the quest guide again for an explaination on how it works.
+  d5: now you have the journal open, I'll tell you a bit about it. At the moment all of the quests are shown in red, which means you have not started them yet.
+  d6: When you start a quest, it will change the color to yellow. Once you've finished it, it will change to green. This is so you can easily see what's complete, what's started, and what's left to begin.
+  d7: Clicking a quest in the journal will display some more information on it. If you havent started the quest, it will tell you where to begin and what requirements you need.
+  d8: if the quest is in progress, it will remind you what to do next.
+  d9: It's very easy to find quest start points. Just look out for the quest icon in your minimap. You should see one marking this house.
+  u10: The minimap in the top right corner of the screen has various icons to show different points of interest. Look for the iccon to the left to find quest start points.
+  d11: The quests themselves can vary greatly from collecting beads to hunting down dragons. Completing quests will reward you will all sorts of things, such as new areas and better weapons!
+  d12: There's not a lot more i can tell youn about questing. You have to experience the thrill of it yourself ot fully understand. Let me know if you want a recap, otherwise you can move on.
+  u13: It's time to enter some caves. Click on the ladder to go down to the next area.
+
+  u14: Would you like to hear about quests again
+    - Yes!
+      d15: If you open your quest journal you will see that all of the quests are shown in red at the moment. This means you have not started them yet.
+      d6-d12:
+    - Nope, i'm ready to move on!
+      d16: okay then.
+# ██ [ Mining Instructor dialogue ] ██
+  d1: Hi there. You must be new around here. So, what do I call you? 'Newcomer' seems so impersonal; and if we're going to be working together, I'd rather call you by name.
+  d2: Ok then, <player.name>. My name is Dezzick and I'm a miner by trade. Let's teach you how to mine.
+  d3: Mining is very simple, all you need is a pickaxe. The rocks around here contain tin and copper. Why don't you get started by mining some? If you're unsure which is which, you can prospect them to find out.
+  u4: the mining instructor gives you a bronze pickaxe
+  u5: It's quite simple really. To mine a rock, all you do is click on it. First up, try mining some tin. If you're unsure which rock is which, you can right-click on one and select the prospect option.
+  u6: you prospect the rock...
+  u7: this rock contains tin.
+  u8: This rock contains copper.
+  d9: Now that you have some ore, you should smelt it into a bronze bar. You can use the furnace over there to do so.
+  u10: Smelting - You now have some tin ore and some copper ore. You can smelt these into a bronze bar. To do so, just click on the indicated furnace. Try it now.
+  u11: You smelt the ore.
+  u12: You've made a bronze bar! Speak to the mining instructor and he'll show you how to make it into a weapon.
+  p13: I Have a bronze bar. Now what?
+  d14: Now that you've got a bar, you can smith it into a weapon. To smith something, you need a hammer and an anvil. There are some anvils just here than you can use. See if you can make a bronze dagger.
+  u15: The mining instructor gives you a hammer.
+  d16: See if you can use the anvil here to make a bronze dagger.
+  u17: To smith you'll need a hammer and enough metal bars to make the desired items, as well as a handy anvil. To start the process, click on the anvil, or alternatively use the bar on it.
+  u18: now you have the smiting menu open, you will see a list of all the things you can make. Only the dagger can be made at your sill level; this is shown by the white text under it. You'll need to select the dagger to continue.
+  u19: Congratulations, you've made your first weapon. Now it's time to move on. Go through the gates shown by the arrow. 
+
+  d20: Would you like me to recap anything?
+    - tell me about prospecting again.
+    d21: It's really very simple. Usually when you go mining you can see if there is more in a rock or not by its color.
+    d22: if you come across a rock you've not seen before and want to know what it is, or if you can't tell if a rock contains ore just by sight, just simply right-click on the rock and select prospect to check closely. Anything else you wanted to know?
+    - tell me about Mining again.
+      d23: Certainly. To mine you need a pickaxe. Different pickaxes let you mine more efficiently.
+      d24: Earlier I gave you a bronze pickaxe, which is the most inefficient pickaxe available, but is perfect for a beginner. 
+      d25: to mine, simply click on a rock that contains ore while you have a pickaxe with you, and you will keep mining the rock until you manage to get some ore, or until it is empty.
+      d26: the better the pickaxe you use, the faster you will get ore from the rock you're mining.
+      d27: You will be able to buy better pickaxes from the Dwarven Mine when you reach the mainland, but they can be expensive.
+      d28: Also, the better the pickaxe the higher the mining level required to use it will be. Was there anything else you wanted to hear?
+    - Tell me about smelting again.
+      d30: smelting is very easy. Simply take the ores required to make a metal to a furnace, then use the ores on the furnace to smelt them into a bar of metal. 
+      d31: furnaces are expensive to build and maintain, so there are not that many scattered around the world. I suggest when you find one you remember its location for future use.
+      d32: an alternative to using a furnace is to smelt your ore is to use high-level magic to do it.
+      d33: as well as letting you smelt ore anywhere, it has a guaranteed success rate in smelting ores.
+      d34: Some metals, such as iron, contain impurities and can be destroyed during the smelting process in a traditional furnace, but magical heat does not destroy the item.
+      d35: Anything else?
+    - Tell me about smiting again.
+      d36: When you have acquired enough bars of metal you wish to work with, you are ready to begin smiting.
+      d37: Take the hammer I gave you, or buy a new one from a general store, and proceed to a nearby anvil.
+      d38: It's a straightforward skill as I'm sure you discovered while making me that lovely bronze dagger.
+      d39: The higher smithing level you are, the better quality the metal you can work with. You start off on bronze and work your way up as your smithing skills increase.
+      d35:
+    - nope, I’m ready to move on!
+      d36: okay then.
+
+# ██ [ Combat Instructor dialogue ] ██
+  u1: In this area you will find out about melee and ranged combat. Speak to the guide and he will tell you all about it.
+  p2: Hi, my name is <Player.name>
+  d3: Do I look like I care? To me you're just another newcomer who thinks theyre ready to fight.
+  d4: I am Vannaka, the greatest swordsman alive, and I'm here to teach you the basics of combat. Let's get started by teaching you to wield a weapon.
+  u5: You now have access to a new interface. Click on the flashing icon of a man, the one to the right of your backpack icon.
+  u6: This is your worn inventory. Here you can see what items you have equipped. In the bottom left corner, you will notice a flashing button with a shield and helmet on it. This button lets you view more details on what you have equipped. Click on it now.
+  u7: You can see what items you are wearing in the worn inventory to the left of the screen, with their combined statistics on the right. Let's add something. Click your dagger to equip it.
+  u8: you're now holding your dagger. Clothes, armor, weapons and more are equipped like this. you can unequip items by clicking on them in the worn inventory. Speak to the combat instructor to continue.
+  d9: Very good, but that little butter knife isn't going to protect you much. Let's get you something a bit better. Once you're properly equipped, we can move on to some actual combat
+  u10: The combat instructor gives you a bronzer sword and a wooden shield.
+  u11: to unequip an item, go to your worn inventory and click on the item. Alternatively, equipping anew item into the same slot will unequip the old one. Try this out now by swapping your dagger for the sword and shield the combat instructor gave you.
+  u12: click the flashing crossed swords icon to open the combat interface
+  d13: Let's get you equip.
+  u14: This is your combat interface. From here, you can select the attack style that you’ll use in combat. using different attack styles will give different types of experience. As well s this, mosnters are weak to speccific attack styles. Click on the gates to continue.
+  d15: Time for some actual combat! Head into the pen and kill one of those rats!
+  u16: It's time to slay some rats! To attack a rat, all you have to do is click on it. This will cause you to walk over and start hitting it.
+  u17: Pass through the gate and talk to the combat instructor. He will give you your next task.
+  p18: I did it! I killed a giant rat!
+  d19: I saw. You seem better at this than I thought. Now that you have grasped basic swordplay, let’s move on.
+  d20: Next up we have ranged attacking. With this you can kill foes from a distance. With ranged, you'll be able to attack the rats without entering the pit meaning they won’t be able to attack back.
+  d21: The combat instructor gives you a short bow and some bronze arrows
+  d22: Now you have a bow and some arrows. Before you can use them, you'll need to equip them. Once equipped with the ranging gear, try killing another rat. You don’t need to enter the pen this time. To attack a rat, just click on it.
+  d23: Use your bow and arrows to kill one of those rats from outside the pen.
+  u24: Now you have a bow and some arrows. Before you can use them, you’ll need to equip them. Once equipped with the ranging gear, try killing another rat. You don’t need to enter the pen this time. To attack a rat, just click on it.
+  u25: You have completed the tasks here. To move on, click on the indicated ladder. If you need to go over any of what you learnt here, just talk to the combat instructor and he’ll tell you what he can.
+  d26: do you need something?
+  - tell me about combat stats
+  d27: certainly. You have three main combat stats: Strength, defense and Attack
+  d28: Strength determines the maximum hit you will be able to deal with your blows, Defence determines the amount of damage you will be able to defend and attack and determines the accuracy of your blows.
+  d29: Other stats are used in combat such as Prayer, Hitpoints, Magic and Ranged. All of these stats can go towards determining your combat level, which is shown near the top of your combat interface screen.
+  d30: You will find out on the mainland that certain items can also affect your stats. There are potions that can be drunk that alter your stats temporarily, such as raising Strength.
+  d31: You will also raise your Defence and Attack values by using different weapons and armors.
+  d32: before going into combat with an opponent it is wise to put the mouse over them and see what combat level they are.
+  d33: Green colored writing usually means it will be an easy fight for you, red means you will probably lose, yellow means they are around your level and orange mean they are slightly stronger.
+  d34: Sometimes things will go on your way, sometimes they won't. there is no such thing as a guaranteed win, but if the odds are on your side, you stand the best chance of walking away victorious. 
+  d35: Now, was there something else you wanted to hear about again?
+  - tell me about melee combat again
+  d36: Ah, my specialty. Close combat fighting, which is also known as melee fighting, covers all combat done at close range to your opponent. 
+  d37: melee fighting depends entirely upon your three basic combat stats: Attack, Defence and Strength.
+  d38: Also, of course, it depends on the quality of your armor and weaponry. A high-levelled fighter with good armor and weapons will be deadly up close.
+  d39: if this is the path you wish to take, remember your success depends on the getting as close to your enemy as quickly as possible
+  d40: Personally, I consider the fine art of melee combat to be the ONLY combat method worth using.
+  d35:
+  - tell me about ranged combat again
+  d36: thinking of being a ranger, eh? Well, okay. I don't enjoy it myself, but I can see the appeal. 
+  d37: ranging employs a lot of different weapons as a skill, not just the short bow you have there. Spears, throwing knives, and crossbows are all used best at a distance from your enemy.
+  d38: Now, those rats were easy pickings, but ton the mainland you will be very lucky if you can find a spot where you can shoot at your enemies without them being able to retaliate.
+  d39: At close range, rangers often do badly in combat. Your best tactic as a ranger is to hit and run, keeping your foe at a distance.
+  d40: your effectiveness as a ranger is almost entirely dependent on your ranged stat. As with all skills, the more you train it, the more powerful it will become.
+  d41: Anything else you wanted to know?
+  - tell me about the Wilderness
+  d42: Ah, yes, the wilderness. It is a place of evil, mark my words. Many is the colleague I have lost in that foul place.
+  d43: It is also a place of both adventure and wealth, so if you are brave enough and strong enough to survive it, you will make a killing. Literally!
+  d44: It is also the only place in the land of Gielinor where players are able to attack each other at will, and as such is the haunt of many Player Killers, or PKers if you will.
+  d45: There are a few things different in the wilderness in comparison to the rest of the lands of Gielinor. Firstly, as I just mentioned, you can and will be attacked by other players.
+  d46: For this reason, you will be given a warning when you approach the wilderness, as it is not a place you would wish to enter by accident.
+  d47: Secondly, there are a number of 'levels' to it. the further into it you travel, the greater the range of people you can attack
+  d48: in level 1 wilderness you will only be able to attack or be attacked by, those players within one combat level of yourself. 
+  d49: in level 50, any player within fifty levels of you will be able to attack, or be attacked by you. Always keep an eye on what level of the wilderness you are currently in.
+  d50: Your current wilderness level is shown at the bottom right of the screen. The final thing you should know about the wilderness is being 'skulled'.
+  d51: If you attack another player without them having attacked first, you will gain a skull above your character’s head.
+  d52: What this means is that if you die while skulled, you will lose EVERYUTHING that your character was carrying.
+  d53: When skulled, you should try to avoid dying for the twenty minutes or so it will take for the skull to wear off. 
+  d54: If you wish to find the wilderness, head north from the where you start on the mainland. It is rather large and hard to miss.
+  d55: If you don't wish to end up there, take notice of the warning you will receive when getting near to it.
+  d35:
+  u36: follow the path and you will come to the front of the building. This is the bank of Gielinor, where you can store all your most valued items. To open your bank, just click on the indicated booth.
+  - Nope, I’m ready to move on!
+  d: Okay then.
+
+# ██ [ bank shit dialogue ] ██
+  d: this is your bank. You can store things here for safekeeping. To deposit something from your inventory, just click on it. You can withdraw things in the same way. To continue, close the bank and click on the indicated poll booth.
+  d: poll booths are found in towns across the world. The OSRS community is invited to vote on future game updates, to decide whether each update should or shouldn't be released. 
+  d: voting is open to members with a skill total of 300. To preserve the OS character of this game, an update must gain 75% support to be released
+  d: a flag appears on the booth to let you know when you're invited to vote a poll.
+  polls are run periodically to let the OSRS community vote on how the game should, or shouldn’t, change. When you're ready, move through the door indicated.
+
+
+# ██ [ Misc dialogue ] ██
+p: greetings brother
+d: hello, I'm brother brace. I'm here to tell you all about prayer.
+d: this is your prayer list. Prayers can help a lot in combat. Click on the prayer you wish to use to activate it, and click it again to deactivate it.
+d: active prayers will drain your prayer points, which you can recharge by finding an altar or other holy spot and praying there.
+d: as you noticed, most enemies will drop bones when defeated. Burying bones, by clicking them in your inventory, will gain you prayer experience.
+d: I'm also the community officer 'round here, so it's my job to tell you about your friends and ignore list.
+d: Right. Now ill tell you a little about each list. you can add people to either list by clicking the add button then typing their name into the box that appears.
+d: you remove people from the list the same way. if you add someone to your ignore list they will not be able to talk to you or send any form of message to you.
+d: your friends list shows the online status of your friends. Friends are red are offline, green are online and on the same world and yellow are online but a different world.
+# ██ [ Magic Instructor dialogue ] ██
+d: Good day, newcomer. My name is Terrova. In here to tell you about magic. Lets start by opening your magic interface.
+d: This is your magic interface. all of your spells are listed here. Talk to the instructor to learn more.
+d: currently you can only cast one offensive spell called Wind Strike. Let's try that out on one of those chickens.
+d: Terrova gives you some air and mind runes.
+d: You n ow have some runes. air spells require runes to cast them. Look for the wind strike spell in your magic interface. Click on the spell to select it and then click on a chicken to cast it. Talk to the instructor if you need more runes.
+u: sorry, i don't have any more runes just now. But i see you have plenty.
+d: well, youre all finished here now. Ill give you a reasonable number of runes when you leave.
+
+# ██ [ Misc dialogue ] ██
+
