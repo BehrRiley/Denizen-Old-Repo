@@ -2,16 +2,6 @@
 - [Scripts](../scripts/)
     - [x] Complete / Consistent
     - [ ] Revisit
-    - [NPCs](../scripts/NPCs)
-        - [x] [Template](../scripts/NPCs/!Template.dsc)
-        - [x] [Hans](../scripts/NPCs/Hans.dsc)
-        - [ ] [Baraek](../scripts/NPCs/Baraek.dsc)
-        - [ ] [Charlie_The_Tramp](../scripts/NPCs/Charlie_The_Tramp.dsc)
-        - [ ] [Johnny_The_Beard](../scripts/NPCs/Johnny_The_Beard.dsc)
-        - [ ] [Katrine](../scripts/NPCs/Katrine.dsc)
-        - [ ] [Reldo](../scripts/NPCs/Reldo.dsc)
-        - [ ] [Straven](../scripts/NPCs/Straven.dsc)
-        - [ ] [Weaponmaster](../scripts/NPCs/Weaponmaster.dsc)
     - [Quests](../scripts/Quests) | Quest Handling scripts
         - [ ] [Shield of Arrav](../scripts/NPCs/Shield%20of%20Arrav.dsc)
     - [commands](../scripts/commands)
@@ -28,3 +18,29 @@
         - [x] [DialogueOptionBuilders](../scripts/NPCs/DialogueOptionBuilders.dsc)
         - [x] [Experience](../scripts/NPCs/Experience.dsc) | Skill Experience Algorithm
         - [ ] [Thieving](../scripts/NPCs/Thieving.dsc) | Theiving skill - major rewrite
+    - [NPCs](../scripts/NPCs)
+        - [x] [Template](../scripts/NPCs/!Template.dsc)
+        - [x] [Hans](../scripts/NPCs/Hans.dsc)
+        - [ ] [Baraek](../scripts/NPCs/Baraek.dsc)
+        - [ ] [Charlie_The_Tramp](../scripts/NPCs/Charlie_The_Tramp.dsc)
+        - [ ] [Johnny_The_Beard](../scripts/NPCs/Johnny_The_Beard.dsc)
+        - [ ] [Katrine](../scripts/NPCs/Katrine.dsc)
+        - [ ] [Reldo](../scripts/NPCs/Reldo.dsc)
+        - [ ] [Straven](../scripts/NPCs/Straven.dsc)
+        - [ ] [Weaponmaster](../scripts/NPCs/Weaponmaster.dsc)
+
+## Project Ideas
+### Procedurally Generating Dungeons
+
+**Concept**:
+
+Generate Main Layout:
+
+![Basic Map Layout][Dungeoneering1]
+
+Concept arts by Sean Howard
+[Dungeoneering1]https://cdn.discordapp.com/attachments/547552615450411011/556603700836302863/entry004-map.png "Basic Map Layout"
+[Dungeoneering2]https://cdn.discordapp.com/attachments/547552615450411011/556603770721533962/entry004-tree.png "Basic Map Tree Conversion"
+[Dungeoneering3]https://cdn.discordapp.com/attachments/547552615450411011/556603821346783232/entry004-tree2.png "Tree Map Key Example"
+[Dungeoneering4]https://cdn.discordapp.com/attachments/547552615450411011/556603887176515609/entry004-tree3.png "Tree Map Key Recursed"
+[Dungeoneering5]https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png "Basic Map Key Recursed"
