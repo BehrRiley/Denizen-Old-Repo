@@ -19,6 +19,9 @@
         - [x] [Experience](../scripts/NPCs/Experience.dsc) | Skill Experience Algorithm
         - [ ] [Thieving](../scripts/NPCs/Thieving.dsc) | Theiving skill - major rewrite
     - [NPCs](../scripts/NPCs)
+        - [Generic](../scripts/Quests/Generic) | Standard or recurring, generic NPCs
+            - [x] [Banker](../scripts/NPCs/!Banker.dsc)
+            - [x] [Man](../scripts/NPCs/!Man.dsc)
         - [x] [Template](../scripts/NPCs/!Template.dsc)
         - [x] [Hans](../scripts/NPCs/Hans.dsc)
         - [ ] [Baraek](../scripts/NPCs/Baraek.dsc)
