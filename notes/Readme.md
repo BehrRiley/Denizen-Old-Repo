@@ -32,27 +32,27 @@
 ## Project Ideas
 ### Procedurally Generating Dungeons
 
-**Concept**:
+#### **Concept**:
 
-####Concept Arts
+#### **Concept Arts**
 
-#####Generate Main Layout:
+##### Generate Main Layout:
 
 ![Dungeoneering1](https://cdn.discordapp.com/attachments/547552615450411011/556603700836302863/entry004-map.png)
 
-#####Convert to Tree layout for easier recursion 
+##### Convert to Tree layout for easier recursion 
 
 ![Dungeoneering2](https://cdn.discordapp.com/attachments/547552615450411011/556603770721533962/entry004-tree.png)
 
-#####Generate place keys blocking off final or exteeding rooms
+##### Generate place keys blocking off final or exteeding rooms
 
 ![Dungeoneering3](https://cdn.discordapp.com/attachments/547552615450411011/556603821346783232/entry004-tree2.png)
 
-#####Recursively place keys blocking off further rooms
+##### Recursively place keys blocking off further rooms
 
 ![Dungeoneering4](https://cdn.discordapp.com/attachments/547552615450411011/556603887176515609/entry004-tree3.png)
 
-#####Generate room based on final recursion
+##### Generate room based on final recursion
 
 ![Dungeoneering5](https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png)
 
