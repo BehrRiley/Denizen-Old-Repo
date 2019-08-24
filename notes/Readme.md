@@ -34,14 +34,26 @@
 
 **Concept**:
 
-Generate Main Layout:
+####Concept Arts
 
-![Basic Map Layout][Dungeoneering1]
+#####Generate Main Layout:
 
+![Dungeoneering1](https://cdn.discordapp.com/attachments/547552615450411011/556603700836302863/entry004-map.png)
+
+#####Convert to Tree layout for easier recursion 
+
+![Dungeoneering2](https://cdn.discordapp.com/attachments/547552615450411011/556603770721533962/entry004-tree.png)
+
+#####Generate place keys blocking off final or exteeding rooms
+
+![Dungeoneering3](https://cdn.discordapp.com/attachments/547552615450411011/556603821346783232/entry004-tree2.png)
+
+#####Recursively place keys blocking off further rooms
+
+![Dungeoneering4](https://cdn.discordapp.com/attachments/547552615450411011/556603887176515609/entry004-tree3.png)
+
+#####Generate room based on final recursion
+
+![Dungeoneering5](https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png)
 
 Concept arts by Sean Howard
-[Dungeoneering1]: https://cdn.discordapp.com/attachments/547552615450411011/556603700836302863/entry004-map.png "Basic Map Layout"
-[Dungeoneering2]: https://cdn.discordapp.com/attachments/547552615450411011/556603770721533962/entry004-tree.png "Basic Map Tree Conversion"
-[Dungeoneering3]: https://cdn.discordapp.com/attachments/547552615450411011/556603821346783232/entry004-tree2.png "Tree Map Key Example"
-[Dungeoneering4]: https://cdn.discordapp.com/attachments/547552615450411011/556603887176515609/entry004-tree3.png "Tree Map Key Recursed"
-[Dungeoneering5]: https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png "Basic Map Key Recursed"
