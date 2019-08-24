@@ -38,10 +38,10 @@ Generate Main Layout:
 
 ![Basic Map Layout][Dungeoneering1]
 
-[Dungeoneering1]https://cdn.discordapp.com/attachments/547552615450411011/556603700836302863/entry004-map.png "Basic Map Layout"
 
 Concept arts by Sean Howard
-[Dungeoneering2]https://cdn.discordapp.com/attachments/547552615450411011/556603770721533962/entry004-tree.png "Basic Map Tree Conversion"
-[Dungeoneering3]https://cdn.discordapp.com/attachments/547552615450411011/556603821346783232/entry004-tree2.png "Tree Map Key Example"
-[Dungeoneering4]https://cdn.discordapp.com/attachments/547552615450411011/556603887176515609/entry004-tree3.png "Tree Map Key Recursed"
-[Dungeoneering5]https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png "Basic Map Key Recursed"
+[Dungeoneering1]: https://cdn.discordapp.com/attachments/547552615450411011/556603700836302863/entry004-map.png "Basic Map Layout"
+[Dungeoneering2]: https://cdn.discordapp.com/attachments/547552615450411011/556603770721533962/entry004-tree.png "Basic Map Tree Conversion"
+[Dungeoneering3]: https://cdn.discordapp.com/attachments/547552615450411011/556603821346783232/entry004-tree2.png "Tree Map Key Example"
+[Dungeoneering4]: https://cdn.discordapp.com/attachments/547552615450411011/556603887176515609/entry004-tree3.png "Tree Map Key Recursed"
+[Dungeoneering5]: https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png "Basic Map Key Recursed"
