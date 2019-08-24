@@ -13,7 +13,7 @@
         - [ ] [Straven](../scripts/NPCs/Straven.dsc)
         - [ ] [Weaponmaster](../scripts/NPCs/Weaponmaster.dsc)
     - [Quests](../scripts/Quests)
-        - [ ] [Shield of Arrav](../scripts/NPCs/Shield of Arrav.dsc)
+        - [ ] [Shield of Arrav](../scripts/NPCs/Shield%20of%20Arrav.dsc)
     - [commands](../scripts/commands)
         - [ ] [NpcSkinLoader](../scripts/NPCs/NpcSkinLoader.dsc)
         - [ ] [NpcSkinSaver](../scripts/NPCs/NpcSkinSaver.dsc)
