@@ -1,6 +1,6 @@
 # :taco: Table of Contents :taco:
 - [Scripts](../scripts/)
-    - [x] Complete
+    - [x] Complete / Consistent
     - [ ] Revisit
     - [NPCs](../scripts/NPCs)
         - [x] [Template](../scripts/NPCs/!Template.dsc)
@@ -12,19 +12,19 @@
         - [ ] [Reldo](../scripts/NPCs/Reldo.dsc)
         - [ ] [Straven](../scripts/NPCs/Straven.dsc)
         - [ ] [Weaponmaster](../scripts/NPCs/Weaponmaster.dsc)
-    - [Quests](../scripts/Quests)
+    - [Quests](../scripts/Quests) | Quest Handling scripts
         - [ ] [Shield of Arrav](../scripts/NPCs/Shield%20of%20Arrav.dsc)
     - [commands](../scripts/commands)
-        - [ ] [NpcSkinLoader](../scripts/NPCs/NpcSkinLoader.dsc)
-        - [ ] [NpcSkinSaver](../scripts/NPCs/NpcSkinSaver.dsc)
+        - [x] [NpcSkinLoader](../scripts/NPCs/NpcSkinLoader.dsc) | loads NPC skin from URL
+        - [x] [NpcSkinSaver](../scripts/NPCs/NpcSkinSaver.dsc) | saving NPC skins for assignment loading, prevents re-loading consistently
     - [data](../scripts/data)
-        - [ ] [formatting](../scripts/NPCs/formatting.dsc)
-        - [ ] [inventories](../scripts/NPCs/inventories.dsc)
-        - [ ] [iQUOP](../scripts/NPCs/iQUOP.dsc)
-        - [ ] [items](../scripts/NPCs/items.dsc)
+        - [x] [formatting](../scripts/NPCs/formatting.dsc) | all formatting scripts
+        - [ ] [inventories](../scripts/NPCs/inventories.dsc) | all inventory scripts - major rewrite for magic spellbooks
+        - [ ] [iQUOP](../scripts/NPCs/iQUOP.dsc) | custom item texture procedure - major rewrite
+        - [x] [items](../scripts/NPCs/items.dsc) | all custom item scripts
     - [mechanics](../scripts/mechanics)
-        - [ ] [Banking](../scripts/NPCs/Banking.dsc) | Player & Admin Banking System
-        - [ ] [Combat](../scripts/NPCs/Combat.dsc)
-        - [ ] [DialogueOptionBuilders](../scripts/NPCs/DialogueOptionBuilders.dsc)
-        - [ ] [Experience](../scripts/NPCs/Experience.dsc)
-        - [ ] [Thieving](../scripts/NPCs/Thieving.dsc)
+        - [x] [Banking](../scripts/NPCs/Banking.dsc) | Player & Admin Banking System
+        - [ ] [Combat](../scripts/NPCs/Combat.dsc) | Combat Algorithm - Major Rewrite
+        - [x] [DialogueOptionBuilders](../scripts/NPCs/DialogueOptionBuilders.dsc)
+        - [x] [Experience](../scripts/NPCs/Experience.dsc) | Skill Experience Algorithm
+        - [ ] [Thieving](../scripts/NPCs/Thieving.dsc) | Theiving skill - major rewrite
