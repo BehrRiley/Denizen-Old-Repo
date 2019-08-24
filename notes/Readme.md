@@ -36,6 +36,13 @@
 ### Procedurally Generating Dungeons
 
 #### **Concept**:
+60 floors; the higher the floor, the greater the experience upon completion and the higher level of the enemies and the overall difficulty. To access the given floor, all players  must have a level twice as high as the floor number, minus one.
+
+| Floor #  | Level Rq | Floor Req  |
+| -------- |:--------:|:----------:|
+| Floor 1  | 1        | -          |
+| Floor 10 | 19       | 9          |
+| Floor 40 | 79       | 39         |
 
 #### **Concept Arts**
 
