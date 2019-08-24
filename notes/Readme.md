@@ -56,4 +56,4 @@
 
 ![Dungeoneering5](https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png)
 
-Concept arts by Sean Howard
+`Concept arts by Sean Howard`
