@@ -3,21 +3,22 @@
     - [x] Complete / Consistent
     - [ ] Revisit
     - [Quests](../scripts/Quests) | Quest Handling scripts
-        - [ ] [Shield of Arrav](../scripts/NPCs/Shield%20of%20Arrav.dsc)
+        - [ ] [Shield of Arrav](../scripts/Quests/Shield%20of%20Arrav.dsc)
     - [commands](../scripts/commands)
-        - [x] [NpcSkinLoader](../scripts/NPCs/NpcSkinLoader.dsc) | loads NPC skin from URL
-        - [x] [NpcSkinSaver](../scripts/NPCs/NpcSkinSaver.dsc) | saving NPC skins for assignment loading, prevents re-loading consistently
+        - [x] [NpcSkinLoader](../scripts/commands/NpcSkinLoader.dsc) | loads NPC skin from URL
+        - [x] [NpcSkinSaver](../scripts/commands/NpcSkinSaver.dsc) | saving NPC skins for assignment loading, prevents re-loading consistently
     - [data](../scripts/data)
-        - [x] [formatting](../scripts/NPCs/formatting.dsc) | all formatting scripts
-        - [ ] [inventories](../scripts/NPCs/inventories.dsc) | all inventory scripts - major rewrite for magic spellbooks
+        - [x] [formatting](../scripts/data/formatting.dsc) | all formatting scripts
+        - [ ] [inventories](../scripts/data/inventories.dsc) | all inventory scripts - major rewrite for magic spellbooks
         - [ ] [iQUOP](../scripts/NPCs/iQUOP.dsc) | custom item texture procedure - major rewrite
         - [x] [items](../scripts/NPCs/items.dsc) | all custom item scripts
     - [mechanics](../scripts/mechanics)
-        - [x] [Banking](../scripts/NPCs/Banking.dsc) | Player & Admin Banking System
-        - [ ] [Combat](../scripts/NPCs/Combat.dsc) | Combat Algorithm - Major Rewrite
-        - [x] [DialogueOptionBuilders](../scripts/NPCs/DialogueOptionBuilders.dsc)
-        - [x] [Experience](../scripts/NPCs/Experience.dsc) | Skill Experience Algorithm
-        - [ ] [Thieving](../scripts/NPCs/Thieving.dsc) | Theiving skill - major rewrite
+        - [x] [Banking](../scripts/mechanics/Banking.dsc) | Player & Admin Banking System
+        - [ ] [Combat](../scripts/mechanics/Combat.dsc) | Combat Algorithm - Major Rewrite
+        - [x] [DialogueOptionBuilders](../scripts/mechanics/DialogueOptionBuilders.dsc)
+        - [x] [Experience](../scripts/NPCs/mechanics.dsc) | Skill Experience Algorithm
+        - [ ] [Thieving](../scripts/NPCs/mechanics.dsc) | Theiving skill - major rewrite
+        - [ ] [Colorize](../scripts/mechanics/Colorize.dsc)
     - [NPCs](../scripts/NPCs)
         - [Generic](../scripts/Quests/Generic) | Standard or recurring, generic NPCs
             - [x] [Banker](../scripts/NPCs/!Banker.dsc)
