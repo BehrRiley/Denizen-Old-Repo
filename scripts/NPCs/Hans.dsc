@@ -1,13 +1,13 @@
-# : ███████████████████████████████████████████████████████████
-# : ██   Assignment Script
-# : ██ 
-# | ██ [ /npc assignment --set Hans ] ██
-Hans: 
-  type: assignment 
-  debug: true 
+# | ███████████████████████████████████████████████████████████
+# % ██   /npc assignment --set Hans
+# | ██
+# % ██ [ Assignment Script ] ██
+Hans:
+  type: assignment
+  debug: true
   actions:
     on assignment:
-    - trigger name:click state:true 
+    - trigger name:click state:true
     - trigger name:proximity state:true radius:4
     - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
     on exit proximity:
@@ -21,7 +21,6 @@ Hans:
       - inject locally GenericGreeting Instantly
   GenericGreeting:
     - wait 2s
-    #- define Options_List "<list[I'd like to access my bank account, please|I'd like to check my pin settings|i'd like to see my collection box|What is this place?]>"
     - define Options_List "<list[I'm looking for whoever is in charge of this place.|I have come to kill everyone in this castle!|I don't know. I'm lost. Where am i?|Can you tell me how long I've been here?]>"
     - define Trigger_List "<list[who|kill|where|how]>"
     - inject Trigger_Option_builder Instantly
@@ -71,11 +70,11 @@ Hans_Interact:
 #days since last played:
 #  <server.current_time_millis.div[86400000].sub[<player.last_played.in_milliseconds.div[86400000]>]>
 
-#Time Played Days: 
+#Time Played Days:
 #  <player.statistic[PLAY_ONE_MINUTE].div_int[1728000].round_down>
 #Time Played Hours:
 #  <player.statistic[PLAY_ONE_MINUTE].div_int[72000].round_down.mod[24]>
-#Time played Minutes: 
+#Time played Minutes:
 #  <player.statistic[PLAY_ONE_MINUTE].div_int[1200].round_down.mod[60]>
 
 #Better first Played:
