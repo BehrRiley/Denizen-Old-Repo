@@ -1,13 +1,13 @@
-# : ███████████████████████████████████████████████████████████
-# : ██   Assignment Script
-# : ██ 
-# | ██ [ /npc assignment --set NPC_Name ] ██
-NPC_Name: 
-  type: assignment 
-  debug: true 
+# | ███████████████████████████████████████████████████████████
+# % ██   /npc assignment --set NPC_Name
+# | ██
+# % ██ [ Assignment Script ] ██
+NPC_Name:
+  type: assignment
+  debug: true
   actions:
     on assignment:
-    - trigger name:click state:true 
+    - trigger name:click state:true
     - trigger name:proximity state:true radius:4
     - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
     on exit proximity:
@@ -32,7 +32,7 @@ NPC_Name_Interact:
   type: interact
   debug: false
   steps:
-    Normal:
+    1:
       chat trigger:
         1:
           trigger: "//"
