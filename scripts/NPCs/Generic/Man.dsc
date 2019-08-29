@@ -1,13 +1,13 @@
-# : ███████████████████████████████████████████████████████████
-# | ██   Assignment Script
-# : ██ 
-# | ██ [ /npc assignment --set NPC_Name ] ██
-Man: 
-  type: assignment 
-  debug: true 
+# | ███████████████████████████████████████████████████████████
+# % ██   Assignment Script
+# | ██
+# % ██ [ /npc assignment --set NPC_Name ] ██
+Man:
+  type: assignment
+  debug: true
   actions:
     on assignment:
-    - trigger name:click state:true 
+    - trigger name:click state:true
     - trigger name:proximity state:true radius:4
     - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
     on exit proximity:
@@ -92,10 +92,10 @@ NPC_Name_Interact:
 
           - flag player interacting_npc:!
 
-# : ███████████████████████████████████████████████████████████
-# | ██   Dialog Transcripts to be narrated
-# : ██ 
-# | ██ [ NPC dialogue ] ██
+# | ███████████████████████████████████████████████████████████
+# % ██   Dialog Transcripts to be narrated
+# | ██
+# % ██ [ NPC dialogue ] ██
   d1: "How can i help you?"
   d2: "No. i have nothing i wish to get rid of. If you want to do some trading, there are plenty of shops and market stalls around though."
   d3: "I'm sorry i can't help you there."

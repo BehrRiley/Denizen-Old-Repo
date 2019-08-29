@@ -7,23 +7,16 @@ NPC_Name:
   debug: true
   actions:
     on assignment:
-    - trigger name:click state:true
-    - trigger name:proximity state:true radius:4
-    - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+      - trigger name:click state:true
+      - trigger name:proximity state:true radius:4
+      - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
     on exit proximity:
       - if <player.flag[interacting_npc]> == <script.name>:
         - flag player interacting_npc:!
     on click:
-      - if <player.flag[interacting_npc]> == <script.name>:
+      - if <player.flag[interacting_npc]> != <script.name>:
         - flag player interacting_npc:<script.name>
-
-      - narrate format:npc "Hello."
-      - inject locally GenericGreeting Instantly
-  GenericGreeting:
-    - wait 2s
-    - define Options_List "<list[|||]>"
-    - define Trigger_List "<list[|||]>"
-    - inject Trigger_Option_builder Instantly
+      - inject Reldo_Interact path:EngageProcedure Instantly
   interact scripts:
     - NPC_Name_Interact
 
@@ -31,6 +24,13 @@ NPC_Name:
 NPC_Name_Interact:
   type: interact
   debug: false
+  GenericGreeting:
+    - narrate format:npc "Hello."
+    - wait 2s
+    
+    - define Options_List "<list[|||]>"
+    - define Trigger_List "<list[|||]>"
+    - inject Trigger_Option_builder Instantly
   steps:
     1:
       chat trigger:
