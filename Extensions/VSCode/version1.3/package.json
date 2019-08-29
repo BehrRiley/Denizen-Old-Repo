@@ -1,0 +1,158 @@
+{
+	"name": "denizenscript",
+	"displayName": "DenizenScript",
+	"description": "The Denizen scripting language.",
+	"author": "mcmonkey and the DenizenScript team",
+	"version": "0.1.3",
+	"publisher": "denizenscript",
+	"license": "MIT",
+	"repository": "https://github.com/DenizenScript/DenizenVSCode",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onLanguage:denizenscript"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "denizenscript",
+				"aliases": [
+					"Denizen Script",
+					"denizenscript"
+				],
+				"extensions": [
+					".dsc"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"configurationDefaults": {
+			"[denizenscript]": {
+				"editor.insertSpaces": true
+			}
+		},
+		"configuration": {
+			"title": "DenizenScript",
+			"properties": {
+				"denizenscript.theme_colors.comment_header": {
+					"type": "string",
+					"default": "#FF0000",
+					"description": "Color of header comments."
+				},
+				"denizenscript.theme_colors.comment_normal": {
+					"type": "string",
+					"default": "#007700",
+					"description": "Color of normal comments."
+				},
+				"denizenscript.theme_colors.comment_code": {
+					"type": "string",
+					"default": "#DD5500",
+					"description": "Color of code comments."
+				},
+				"denizenscript.theme_colors.comment_1": {
+					"type": "string",
+					"default": "#6C0042",
+					"description": "Color of code comments."
+				},
+				"denizenscript.theme_colors.comment_2": {
+					"type": "string",
+					"default": "#DD1000",
+					"description": "Color of code comments."
+				},
+				"denizenscript.theme_colors.comment_3": {
+					"type": "string",
+					"default": "#00564A",
+					"description": "Color of code comments."
+				},
+				"denizenscript.theme_colors.comment_4": {
+					"type": "string",
+					"default": "#8A8A00",
+					"description": "Color of code comments."
+				},
+				"denizenscript.theme_colors.key": {
+					"type": "string",
+					"default": "#1155FF",
+					"description": "Color of basic keys (lines that end with a colon)."
+				},
+				"denizenscript.theme_colors.key_inline": {
+					"type": "string",
+					"default": "#1155FF|style=italic",
+					"description": "Color of inline keys (lines that contain a colon, and don't start with a dash)."
+				},
+				"denizenscript.theme_colors.command": {
+					"type": "string",
+					"default": "#DD99FF|style=italic",
+					"description": "Color of command names."
+				},
+				"denizenscript.theme_colors.quote_double": {
+					"type": "string",
+					"default": "#77BBF5",
+					"description": "Color of double-quoted sections."
+				},
+				"denizenscript.theme_colors.quote_single": {
+					"type": "string",
+					"default": "#88DDFF",
+					"description": "Color of single-quoted sections."
+				},
+				"denizenscript.theme_colors.tag": {
+					"type": "string",
+					"default": "#AAAAAA",
+					"description": "Color of <tags>."
+				},
+				"denizenscript.theme_colors.tag_dot": {
+					"type": "string",
+					"default": "#EEEEFF",
+					"description": "Color of the dot symbol within tags."
+				},
+				"denizenscript.theme_colors.tag_param": {
+					"type": "string",
+					"default": "#7777FF",
+					"description": "Color of [parameters] within tags."
+				},
+				"denizenscript.theme_colors.colons": {
+					"type": "string",
+					"default": "#66CCFF|style=bold",
+					"description": "Colons, on a key or the end of a command."
+				},
+				"denizenscript.theme_colors.bad_space": {
+					"type": "string",
+					"default": "#FFFFFF|background=#440000",
+					"description": "Highlighting for bad spaces (eg past end of line)."
+				},
+				"denizenscript.theme_colors.normal": {
+					"type": "string",
+					"default": "#FFFFFF",
+					"description": "Highlighting for anything not otherwise specified."
+				}
+			}
+		},
+		"scripts": {
+			"vscode:prepublish": "npm run compile",
+			"compile": "tsc -p ./ --skipLibCheck"
+		},
+		"devDependencies": {
+			"@types/node": "^8.10.25",
+			"typescript": "^2.6.1"
+		},
+		"dependencies": {
+			"vscode-languageclient": "^5.2.1"
+		}
+	},
+	"devDependencies": {
+		"@types/node": "^12.7.1",
+		"vscode": "^1.1.36"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^5.2.1"
+	},
+	"__metadata": {
+		"id": "6bad0bcd-576a-49f4-b656-20525bbf8e4f",
+		"publisherId": "744d2bcf-d3aa-4375-ae35-168f4d21de67",
+		"publisherDisplayName": "DenizenScript"
+	}
+}
