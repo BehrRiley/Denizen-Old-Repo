@@ -9,15 +9,18 @@ Man:
     on assignment:
     - trigger name:click state:true
     - trigger name:proximity state:true radius:4
-    - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
-    on exit proximity:
+    - if <server.has_flag[npc.skin.<script.name>]>:
+      - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+    - else:
+      - narrate "<proc[Colorize].context[No NPC skin saved for:|red]> <&6>'<&e><script.name><&6>'"
+  on exit proximity:
       - if <player.flag[interacting_npc]> == <script.name>:
         - flag player interacting_npc:!
   interact scripts:
-    - NPC_Name_Interact
+    - Man_Interact
 
 # | ██  [ NPC_Name Interact Script ] ██
-NPC_Name_Interact:
+Man_Interact:
   type: interact
   debug: false
   steps:
