@@ -9,7 +9,10 @@ NPC_Name:
     on assignment:
       - trigger name:click state:true
       - trigger name:proximity state:true radius:4
-      - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+      - if <server.has_flag[npc.skin.<script.name>]>:
+        - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+      - else:
+        - narrate "<proc[Colorize].context[No NPC skin saved for:|red]> <&6>'<&e><script.name><&6>'"
     on exit proximity:
       - if <player.flag[interacting_npc]> == <script.name>:
         - flag player interacting_npc:!
@@ -27,7 +30,7 @@ NPC_Name_Interact:
   GenericGreeting:
     - narrate format:npc "Hello."
     - wait 2s
-    
+
     - define Options_List "<list[|||]>"
     - define Trigger_List "<list[|||]>"
     - inject Trigger_Option_builder Instantly
