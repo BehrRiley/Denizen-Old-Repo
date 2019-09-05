@@ -87,3 +87,6 @@ Hans_Interact:
 #  <server.current_time_millis.sub[<player.first_played.in_seconds.mul[1000]>].div[1000].div[3600].round_down.mod[24]>
 #total minutes into that day:
 #  <server.current_time_millis.sub[<player.first_played.in_seconds.mul[1000]>].div[1000].div[60].round_down.mod[60]>
+
+#formatted days since last logged in
+#<duration[<player.last_played.milliseconds.-[<server.current_time_millis>].abs./[1000]>].formatted>
