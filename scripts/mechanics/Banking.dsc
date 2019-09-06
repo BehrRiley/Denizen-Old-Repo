@@ -1,9 +1,9 @@
-# : ███████████████████████████████████████████████████████████
-# : ██    Open Bank Task
-# | ██    - run open_bank (def:#) instantly
-# | ██    - run open_bank_admin [def:#|player] instantly
-# : ██ 
-# | ██  [ Player Bank ] ██
+# | ███████████████████████████████████████████████████████████
+# | ██    Open Bank Task
+# % ██    - run open_bank (def:#) instantly
+# % ██    - run open_bank_admin [def:#|player] instantly
+# | ██
+# % ██  [ Player Bank ] ██
 Open_Bank:
   type: task
   debug: false
@@ -13,7 +13,7 @@ Open_Bank:
     - define pBank <player.uuid>pBank_<[BankID]>
     - define slots1 <[BankID].sub[1].mul[45].add[1]>
     - define slots2 <[BankID].sub[1].mul[45].add[45]>
-    - define title "Bank<&pipe>Items <[slots1]>-<[slots2]>/450"
+    - define title "Bank|Items <[slots1]>-<[slots2]>/450"
     - note "in@generic[title=<[title]>;size=54]" as:<[pBank]>
     - define items <yaml[pBankKey].read[<player.uuid>.<[BankID]>]||null>
     - if <[BankID]> > 1:
@@ -21,7 +21,7 @@ Open_Bank:
     - else:
       - define LeftArrow i@blank
     - if <[bankID]> == 10:
-      - define RightArrow i@blank 
+      - define RightArrow i@blank
     - else:
       - define RightArrow i@NextPageArrow[nbt=BankID/<[BankID].add[1]>]
     - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|<[RightArrow]>"
@@ -63,7 +63,7 @@ Open_Bank_Admin:
   - else:
     - define LeftArrow i@blank
   - if <[bankID]> == 10:
-    - define RightArrow i@blank 
+    - define RightArrow i@blank
   - else:
     - define RightArrow i@NextPageArrow[nbt=li@BankID/<[BankID].add[1]>|PlayerID/<[Player]>]
   - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|<[RightArrow]>"
@@ -72,9 +72,10 @@ Open_Bank_Admin:
     - inventory set d:in@<[pBank]> o:<[items]>
   - inventory open d:in@<[pBank]>
 
-# % ███████████████████████████████████████████████████████████
+# | ███████████████████████████████████████████████████████████
 # % ██    Bank Handlers
-# % ██ 
+# | ██
+# % ██  [ Events ] ██
 PlayerBank_Handler:
   type: world
   debug: false
@@ -105,8 +106,8 @@ PlayerBank_Handler:
     on player clicks LastPageArrow in inventory:
       - determine passively cancelled
       - inject locally Inventory_Save
-      - run PlayerBank_Command def:<context.item.nbt[BankID]> Instantly
+      - run Open_Bank def:<context.item.nbt[bankid]> Instantly
     on player clicks NextPageArrow in inventory:
       - determine passively cancelled
       - inject locally Inventory_Save
-      - run PlayerBank_Command def:<context.item.nbt[BankID]> Instantly
+      - run Open_Bank def:<context.item.nbt[bankid]> Instantly
