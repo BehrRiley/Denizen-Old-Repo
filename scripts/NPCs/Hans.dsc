@@ -2,6 +2,7 @@
 # % ██   /npc assignment --set Hans
 # | ██
 # % ██ [ Assignment Script ] ██
+# $ ██ [ To-Do ] | Setup personal YAML files to remove repetitive option prompts
 Hans:
   type: assignment
   debug: true
@@ -9,12 +10,16 @@ Hans:
     on assignment:
     - trigger name:click state:true
     - trigger name:proximity state:true radius:4
-    - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+    - trigger name:chat state:true
+    - if <server.has_flag[npc.skin.<script.name>]>:
+      - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+    - else:
+      - narrate "<proc[Colorize].context[No NPC skin saved for:|red]> <&6>'<&e><script.name><&6>'"
     on exit proximity:
-      - if <player.flag[interacting_npc]> == <script.name>:
-        - flag player interacting_npc:!
+        - if <player.flag[interacting_npc]||null> == <script.name>:
+          - flag player interacting_npc:!
     on click:
-      - if <player.flag[interacting_npc]> == <script.name>:
+      - if <player.flag[interacting_npc]||null> == <script.name>:
         - flag player interacting_npc:<script.name>
         
       - narrate format:npc "Hello. What are you doing here?"
@@ -23,6 +28,8 @@ Hans:
     - wait 2s
     - define Options_List "<list[I'm looking for whoever is in charge of this place.|I have come to kill everyone in this castle!|I don't know. I'm lost. Where am i?|Can you tell me how long I've been here?]>"
     - define Trigger_List "<list[who|kill|where|how]>"
+      # $ *.exclude[<yaml[<player>].key[npc_data.interacting_cooldowns]>]
+      # $ script[<script.name>_interact].yaml_key[Triggers]
     - inject Trigger_Option_builder Instantly
   interact scripts:
     - Hans_Interact
@@ -30,43 +37,71 @@ Hans:
 # | ██  [ Hans Interact Script ] ██
 Hans_Interact:
   type: interact
-  debug: false
+  debug: true
   steps:
-    Normal:
+    Normal*:
       chat trigger:
-        MiscChatter1:
-          trigger: "/who|charge|leader|duke|king|prince|floor/"
+        Greeting:
+          trigger: "/Hi|Hello|Howdy|hey"
           hide trigger message: true
           script:
-            - narrate format:npc "Who, the Duke? He's in the study, on the second floor."
-            - flag player interacting_npc:!
+            - narrate format:player "<context.keyword>"
+            - wait 2s
+            - narrate format:npc "Hello. What are you doing here?"
+            - inject <script.name.before[_interact]> path:GenericGreeting Instantly
+        MiscChatter1:
+          trigger: "/who|whoever/ is /incharge|charge|leader|duke|king|prince/ here /second|floor/"
+          hide trigger message: true
+          script:
+            - if <player.flag[interacting_npc]||> == <script.name.before[_Interact]>:
+              - narrate format:player "I'm looking for whoever is in charge of this place."
+              - wait 2s
+              - narrate format:npc "Who, the Duke? He's in the study, on the second floor."
+            # $ yaml id:<player> set npc_data.interacting_cooldowns:MiscChatter1
+              - flag player interacting_npc:!
         MiscChatter2:
           trigger: "/kill|everybody|murder|destroy/"
           hide trigger message: true
           script:
-            - narrate format:npc "Help! Help!"
-            - flag player interacting_npc:!
+            - if <player.flag[interacting_npc]||> == <script.name.before[_Interact]>:
+              - narrate format:player "I have come to kill everyone in this castle!"
+              - wait 2s
+              - narrate format:npc "Help! Help!"
+                # $ yaml id:<player> set npc_data.interacting_cooldowns:MiscChatter2
+              - flag player interacting_npc:!
         WhereAmI:
           trigger: "/where|location|what|place/"
           hide trigger message: true
           script:
-            - narrate format:npc "You are in Lumbridge Castle."
-            - flag player interacting_npc:!
+            - if <player.flag[interacting_npc]||> == <script.name.before[_Interact]>:
+              - narrate format:player "I don't know. I'm lost. Where am i?"
+              - wait 2s
+              - narrate format:npc "You are in Lumbridge Castle."
+                # $ yaml id:<player> set npc_data.interacting_cooldowns:WhereAmI
+              - flag player interacting_npc:!
         Timestamp:
           trigger: "/how|long|been|time|duraton|playtime|play/"
           hide trigger message: true
           script:
-            - define PDays "<&6><player.statistic[PLAY_ONE_MINUTE].div_int[1728000].round_down><&f>"
-            - define PHours "<&6><player.statistic[PLAY_ONE_MINUTE].div_int[72000].round_down.mod[24]><&f>"
-            - define PMinutes "<&6><player.statistic[PLAY_ONE_MINUTE].div_int[1200].round_down.mod[60]><&f>"
-            - define FirstDays "<&6><util.date.time.duration.sub[<player.first_played>].in_days.round_down><&f>"
-
-            - narrate format:npc "Ahh, i see all the newcomers arriving in Lumbridge, fresh-faced and eager for adventure. I remember you..."
-            - wait 2s
-
-            - narrate format:npc "You've spent <[PDays]> days, <[PHours]> hours, <[PMinutes]> minutes in the world since you arrived <[FirstDays]> days ago."
-            - flag player interacting_npc:!
-
+            - if <player.flag[interacting_npc]||> == <script.name.before[_Interact]>:
+              - define PDays "<&6><player.statistic[PLAY_ONE_MINUTE].div_int[1728000].round_down><&f>"
+              - define PHours "<&6><player.statistic[PLAY_ONE_MINUTE].div_int[72000].round_down.mod[24]><&f>"
+              - define PMinutes "<&6><player.statistic[PLAY_ONE_MINUTE].div_int[1200].round_down.mod[60]><&f>"
+              - define FirstDays "<&6><util.date.time.duration.sub[<player.first_played>].in_days.round_down><&f>"
+              - narrate format:player "Can you tell me how long I've been here?"
+              - wait 2s
+              - narrate format:npc "Ahh, i see all the newcomers arriving in Lumbridge, fresh-faced and eager for adventure. I remember you..."
+              - wait 2s
+              - narrate format:npc "You've spent <[PDays]> days, <[PHours]> hours, <[PMinutes]> minutes in the world since you arrived <[FirstDays]> days ago."
+                # $ yaml id:<player> set npc_data.interacting_cooldowns:Timestamp
+              - flag player interacting_npc:!
+  # $ script.list_keys[steps]
+  # $   [%].list_keys[chat trigger].exclude[greeting]
+  Triggers:
+    - MiscChatter1
+    - MiscChatter2
+    - WhereAmI
+    - TimeStamp
 #days since last played:
 #  <server.current_time_millis.div[86400000].sub[<player.last_played.in_milliseconds.div[86400000]>]>
 
@@ -87,6 +122,3 @@ Hans_Interact:
 #  <server.current_time_millis.sub[<player.first_played.in_seconds.mul[1000]>].div[1000].div[3600].round_down.mod[24]>
 #total minutes into that day:
 #  <server.current_time_millis.sub[<player.first_played.in_seconds.mul[1000]>].div[1000].div[60].round_down.mod[60]>
-
-#formatted days since last logged in
-#<duration[<player.last_played.milliseconds.-[<server.current_time_millis>].abs./[1000]>].formatted>
