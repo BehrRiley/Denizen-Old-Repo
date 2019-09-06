@@ -1,8 +1,7 @@
-# : ███████████████████████████████████████████████████████████
-# : ██    Assignment Script
-# | ██    /npc assignment --set BankerNPC
-# : ██ 
-# | ██  [ Banker NPC ] ██
+# | ███████████████████████████████████████████████████████████
+# % ██    /npc assignment --set BankerNPC
+# | ██
+# % ██  [ Assignment Script ] ██
 Banker:
   type: assignment
   debug: false
@@ -10,7 +9,10 @@ Banker:
     on assignment:
       - trigger name:click state:true
       - trigger name:proximity state:true radius:4
-      - adjust <npc> skin_blob:<server.flag[npc.skin.banker<util.random.int[1].to[2]>]>
+      - if <server.has_flag[npc.skin.<script.name>]>:
+        - adjust <npc> skin_blob:<server.flag[npc.skin.<script.name>]>
+      - else:
+        - narrate "<proc[Colorize].context[No NPC skin saved for:|red]> <&6>'<&e><script.name><&6>'"
     on exit proximity:
       - if <player.flag[interacting_npc]> == <script.name>:
         - flag player interacting_npc:!
@@ -37,10 +39,10 @@ Banker_Interact:
   type: interact
   debug: false
   steps:
-    Normal:
+    Normal*:
       chat trigger:
         Bank:
-          trigger: "/access|bank|account/" 
+          trigger: "/access|bank|account/"
           hide trigger message: true
           script:
             - flag player interacting_npc:!
@@ -68,13 +70,13 @@ Banker_Interact:
     Inquire:
       chat trigger:
         Introduction:
-          trigger: "/what|do/" 
+          trigger: "/what|do/"
           hide trigger message: true
           script:
             - narrate format:npc "We will look after your items and money for you. Leave your valuables with us if you want to keep them safe."
             - inject Banker path:GenericGreeting Instantly
         Location:
-          trigger: "/called|varrock/" 
+          trigger: "/called|varrock/"
           hide trigger message: true
           script:
             - narrate format:npc "Yes we did, but people kept on coming into our branches outside of Varrock and telling us that our signs were wrong. They acted as if we didn't know what town we were in or something."
