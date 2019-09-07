@@ -6,6 +6,10 @@ bin-release/
 
 # Other files and folders
 .settings/
+archive/
+midi/
+data/
+.vscode/
 
 # Executables
 *.swf
@@ -16,4 +20,11 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
-.vscode/settings.json
+config.yml
+scripts/Message Constructor Library.dsc
+scoreboards.yml
+saves.yml
+notables.yml
+death.yml
+entities.yml
+maps.yml
