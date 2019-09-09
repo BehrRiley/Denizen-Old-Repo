@@ -2,63 +2,63 @@
 # % ██   Quest Event Handlers
 # | ██
 # % ██ [ Searching Bookshelves ] ██
-SoAQuestHandler:
-  type: world
-  debug: false
-  events:
-    on player clicks block in EmptyBookshelf:
-      - narrate "You search the books..."
-      - wait 2s
-      - narrate "You find nothing of interest to you."
-    on player clicks block in SoAQuestBookshelf:
-      - narrate "You search the books..."
-      - wait 2s
-      - narrate "Aha! 'The Shield Of Arrav'! Exactly what I was looking for."
-      - wait 1s
-      - narrate "You take the book from the bookcase."
-      - give i@SoAQuestBook
-    on player clicks with SoAQuestBook:
-      - if <context.click_type.contains[RIGHT]>:
-        - flag player Quest.SoA.Stage:2
-        #%THIS NEEDS TESTING V %#
-    on player clicks block in SoADoors:
-      - if <context.location> == l@#,#,#,Runescape:
-        # - if NOT in Black Arm Gang
-            # % % % % % CONSIDER CUTTING THIS ENTIRE CHUNK REPLACE WITH INJECT % % % % % % % % % % %
-        - if <player.flag[quest.SoA.Gang]> != "Pheonix":
-          - determine passively cancelled
-          - flag player interacting_npc:Straven
-        # - if accepted in Black Arm gang
-        - else if <player.flag[quest.SoA.Gang]> == "Pheonix":
-          - stop
-        # - if accepted Pheonix Gang
-        - else if <player.flag[Quest.SoA.Gang]> == "BlackArm":
-          - narrate format:StravenNPC "<s@straven.yaml_key[d30]>"
-          - wait 2s
-          # - if hasnt finished quest
-          # % % % % % % % % % % % % % % % % % %LAST STAGE NUMBER% % % % % % % % % % % % % % % % % %
-          - if <player.flag[Quest.SoA.Gang]> < LASTSTAGENUMBERHERE:
-          #>
-            - narrate format:StravenNPC "<s@straven.yaml_key[d31]>"
-            - wait 3s
-            - narrate format:StravenNPC "<s@straven.yaml_key[d32]>"
-            - wait 5s
-            # % % % % % % % % % % % % % % % % % % Yes/No Switch Allegiance% % % % % % % % % % % % %
-            # - run Straven path:opt_loop def:o|Straven instantly
-          - stop
-        - else:
-          - narrate format:StravenNPC "<s@straven.yaml_key[d1]>"
-          - wait 2s
-          # - if player knows who they are
-          - if <player.flag[Quest.SoA.Stage]> < 3:
-            # >
-            # %  % % % % % % % % % % % % % % % % % option one% % % % % % % % % % % % % % % % % % % %
-            # - run Straven path:opt_loop def:o1|Straven instantly
-          # | if doesnt
-          - else if <player.flag[Quest.SoA.Stage]> == 3:
-            # % % % % % % % % % % % % % % % % % % option two% % % % % % % % % % % % % % % % % % % %
-            # - run Straven path:opt_loop def:o2|Straven instantly
-            # % % % % % CONSIDER CUTTING THIS ENTIRE CHUNK REPLACE WITH INJECT % % % % % % % % % % %
+#SoAQuestHandler:
+#  type: world
+#  debug: false
+#  events:
+#    on player clicks block in EmptyBookshelf:
+#      - narrate "You search the books..."
+#      - wait 2s
+#      - narrate "You find nothing of interest to you."
+#    on player clicks block in SoAQuestBookshelf:
+#      - narrate "You search the books..."
+#      - wait 2s
+#      - narrate "Aha! 'The Shield Of Arrav'! Exactly what I was looking for."
+#      - wait 1s
+#      - narrate "You take the book from the bookcase."
+#      - give i@SoAQuestBook
+#    on player clicks with SoAQuestBook:
+#      - if <context.click_type.contains[RIGHT]>:
+#        - flag player Quest.SoA.Stage:2
+#        #%THIS NEEDS TESTING V %#
+#    on player clicks block in SoADoors:
+#      - if <context.location> == l@#,#,#,Runescape:
+#        # - if NOT in Black Arm Gang
+#            # % % % % % CONSIDER CUTTING THIS ENTIRE CHUNK REPLACE WITH INJECT % % % % % % % % % % %
+#        - if <player.flag[quest.SoA.Gang]> != "Pheonix":
+#          - determine passively cancelled
+#          - flag player interacting_npc:Straven
+#        # - if accepted in Black Arm gang
+#        - else if <player.flag[quest.SoA.Gang]> == "Pheonix":
+#          - stop
+#        # - if accepted Pheonix Gang
+#        - else if <player.flag[Quest.SoA.Gang]> == "BlackArm":
+#          - narrate format:StravenNPC "<s@straven.yaml_key[d30]>"
+#          - wait 2s
+#          # - if hasnt finished quest
+#          # % % % % % % % % % % % % % % % % % %LAST STAGE NUMBER% % % % % % % % % % % % % % % % % %
+#          - if <player.flag[Quest.SoA.Gang]> < LASTSTAGENUMBERHERE:
+#          #>
+#            - narrate format:StravenNPC "<s@straven.yaml_key[d31]>"
+#            - wait 3s
+#            - narrate format:StravenNPC "<s@straven.yaml_key[d32]>"
+#            - wait 5s
+#            # % % % % % % % % % % % % % % % % % % Yes/No Switch Allegiance% % % % % % % % % % % % %
+#            # - run Straven path:opt_loop def:o|Straven instantly
+#          - stop
+#        - else:
+#          - narrate format:StravenNPC "<s@straven.yaml_key[d1]>"
+#          - wait 2s
+#          # - if player knows who they are
+#          - if <player.flag[Quest.SoA.Stage]> < 3:
+#            # >
+#            # %  % % % % % % % % % % % % % % % % % option one% % % % % % % % % % % % % % % % % % % %
+#            # - run Straven path:opt_loop def:o1|Straven instantly
+#          # | if doesnt
+#          - else if <player.flag[Quest.SoA.Stage]> == 3:
+#            # % % % % % % % % % % % % % % % % % % option two% % % % % % % % % % % % % % % % % % % %
+#            # - run Straven path:opt_loop def:o2|Straven instantly
+#            # % % % % % CONSIDER CUTTING THIS ENTIRE CHUNK REPLACE WITH INJECT % % % % % % % % % % %
 
 # | ███████████████████████████████████████████████████████████
 # % ██   Quest Items
