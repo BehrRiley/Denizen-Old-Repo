@@ -18,6 +18,8 @@ Banker:
     on exit proximity:
       - if <player.flag[interacting_npc]||> == <script.name>:
         - flag player interacting_npc:!
+        - if <script[<script.name>_Interact].step[<player>]> != Normal:
+            - zap Banker_Interact Normal
     on click:
       - if <player.flag[interacting_npc]||> != <script.name>:
         - flag player interacting_npc:<script.name>
@@ -33,7 +35,8 @@ Banker:
     - define Options_List "<list[I'd like to access my bank account, please|What is this place?]>"
 # $ - define Trigger_List "<list[access|pin|collection|place]>"
     - define Trigger_List <list[access|place]>
-    - zap Banker_Interact Normal
+    - if <script[<script.name>_Interact].step[<player>]> != Normal:
+      - zap Banker_Interact Normal
     - inject Trigger_Option_builder Instantly
   interact scripts:
     - Banker_Interact
@@ -42,6 +45,7 @@ Banker:
 Banker_Interact:
   type: interact
   debug: false
+  speed: 0
   steps:
     Normal*:
       chat trigger:
@@ -72,6 +76,11 @@ Banker_Interact:
             - define Trigger_List "<list[what|Varrock]>"
             - zap Inquire
             - inject Trigger_Option_builder Instantly
+        Blacklist:
+          trigger: "/what|do|called|varrock/"
+          hide trigger message: true
+          script:
+            - stop
     Inquire:
       chat trigger:
         Introduction:
@@ -88,3 +97,8 @@ Banker_Interact:
             - narrate format:npc "Yes we did, but people kept on coming into our branches outside of Varrock and telling us that our signs were wrong. They acted as if we didn't know what town we were in or something."
             - wait 4s
             - inject Banker path:GenericGreeting Instantly
+        Blacklist:
+          trigger: "/access|pin|collection|place/"
+          hide trigger message: true
+          script:
+            - stop
