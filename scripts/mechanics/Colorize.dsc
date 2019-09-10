@@ -1,6 +1,6 @@
 Colorize:
     type: procedure
-    debug: true
+    debug: false
     definitions: string|color
     script:
         - choose <[Color]>:
