@@ -19,7 +19,7 @@ Gielinor Guide:
   on click:
     - if <player.flag[interacting_npc]> != <script.name>:
       - flag player interacting_npc:<script.name>
-    - inject "Gielinor Guide_Interact" "path:steps.greeting.chat trigger.script" Instantly
+    - inject "Gielinor Guide_Interact" "path:steps.greeting.chat trigger.greet.script" Instantly
   interact scripts:
   - "Gielinor Guide_Interact"
 
