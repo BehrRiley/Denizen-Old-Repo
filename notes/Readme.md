@@ -14,15 +14,21 @@
         - [x] [items](../scripts/NPCs/items.dsc) | all custom item scripts
     - [mechanics](../scripts/mechanics)
         - [x] [Banking](../scripts/mechanics/Banking.dsc) | Player & Admin Banking System
+        - [x] BehrEdit | World Edit Features
         - [ ] [Combat](../scripts/mechanics/Combat.dsc) | Combat Algorithm - Major Rewrite
         - [x] [DialogueOptionBuilders](../scripts/mechanics/DialogueOptionBuilders.dsc)
-        - [x] [Experience](../scripts/NPCs/mechanics.dsc) | Skill Experience Algorithm
-        - [ ] [Thieving](../scripts/NPCs/mechanics.dsc) | Theiving skill - major rewrite
-        - [ ] [Colorize](../scripts/mechanics/Colorize.dsc)
+        - [x] [Experience](../scripts/mechanics/Experience.dsc) | Skill Experience Algorithm
+        - [ ] [NPCMonitors](../scripts/mechanics/NPCMonitors.dsc) | Temporary Project for verifying ease between removing options from lists
+        - [x] [PlayerDataManager](../scripts/mechanics/PlayerDataManager.dsc) | for YAML referencing additional custom player data
+        - [ ] [Thieving](../scripts/mechanics/Thieving.dsc) | Theiving skill - major rewrite
+        - [x] [Colorize](../scripts/mechanics/Colorize.dsc)
     - [NPCs](../scripts/NPCs)
         - [Generic](../scripts/Quests/Generic) | Standard or recurring, generic NPCs
             - [x] [Banker](../scripts/NPCs/!Banker.dsc)
             - [x] [Man](../scripts/NPCs/!Man.dsc)
+        - [Tutorial](../scripts/Quests/Tutorial) | Tutorial Specific NPCs and related Tutorial Scripts
+            - [x] [Gielinor_Guide](../scripts/NPCs/Tutorial/Gielinor_Guide.dsc)
+            - [x] [TutorialHandler](../scripts/NPCs/Tutorial/TutorialHandler.dsc)
         - [x] [Template](../scripts/NPCs/!Template.dsc)
         - [x] [Hans](../scripts/NPCs/Hans.dsc)
         - [ ] [Baraek](../scripts/NPCs/Baraek.dsc)
