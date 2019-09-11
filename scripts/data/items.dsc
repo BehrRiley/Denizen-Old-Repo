@@ -2,41 +2,41 @@ LastPageArrow:
   type: item
   debug: false
   material: tipped_arrow
-  mechanisms: 
-    potion_effects: 
-      - INSTANT_HEAL,false,false
-    flags: 
-      - HIDE_POTION_EFFECTS
-      - HIDE_ENCHANTS
-      - HIDE_ATTRIBUTES
-      - HIDE_UNBREAKABLE
-      - HIDE_DESTROYS
-      - HIDE_PLACED_ON
-  display name: <&a>◀ <&2>L<&a>ast <&2>P<&a>age <&2>◀
-  no-id: true
+  mechanisms:
+    potion_effects: "INSTANT_HEAL,false,false"
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2><&chr[25c0]> <&2>L<&a>ast <&2>P<&a>age <&2><&chr[25c0]>
+  #<&a>◀ <&2>L<&a>ast <&2>P<&a>age <&2>◀
 NextPageArrow:
   type: item
   debug: false
   material: tipped_arrow
-  mechanisms: 
-    potion_effects: 
-      - INSTANT_HEAL,false,false
-    flags: 
-      - HIDE_POTION_EFFECTS
-      - HIDE_ENCHANTS
-      - HIDE_ATTRIBUTES
-      - HIDE_UNBREAKABLE
-      - HIDE_DESTROYS
-      - HIDE_PLACED_ON
-  display name: <&a>▶ <&2>N<&a>ext <&2>P<&a>age <&2>▶
-  no-id: true
+  mechanisms:
+    potion_effects: "INSTANT_HEAL,false,false"
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&a><&chr[27a4]> <&2>N<&a>ext <&2>P<&a>age <&2><&chr[27a4]>
+  #display name: <&a><&chr[25b6]> <&2>N<&a>ext <&2>P<&a>age <&2><&chr[25b6]>
+  #<&a>▶ <&2>N<&a>ext <&2>P<&a>age <&2>▶
 
 Blank:
   type: item
   debug: false
   material: black_stained_glass_pane
   display name: " "
-  no-id: true
+
+Bwand:
+  type: item
+  debug: false
+  material: golden_hoe
+  display name: "<&2>B<&a>ehr<&2>E<&a>dit <&2>S<&a>tick"
+  lore:
+    - <&a> Position 1<&co> Left Click
+    - <&a> Position 2<&co> Right Click
+  enchantments:
+    - BINDING_CURSE:1
+    - VANISHING_CURSE:1
+  mechanisms:
+    flags: HIDE_ENCHANTS
 
 # : ████████████████████████████████████████████████████
 # | ██   Main Spellbook & Misc
@@ -47,34 +47,34 @@ Spellbook_Item:
   debug: false
   material: enchanted_book
   display name: "<&4>test item"
-  enchantments: 
-    - vanishing_curse:1 
-  mechanisms: 
-    flags: HIDE_ENCHANTS 
+  enchantments:
+    - vanishing_curse:1
+  mechanisms:
+    flags: HIDE_ENCHANTS
 # | ██ [ Items | Sub-Spellbooks ] ██
 BasicSpellbook_Item:
-  type: item 
+  type: item
   debug: false
   material: enchanted_book
   display name: "<&4>B<&c>asic <&4>S<&c>pells"
-  enchantments: 
-    - vanishing_curse:1 
-  mechanisms: 
-    flags: HIDE_ENCHANTS 
+  enchantments:
+    - vanishing_curse:1
+  mechanisms:
+    flags: HIDE_ENCHANTS
   lore:
   - <&c>Level 1  <&f>|<&c>  Air Strike
   - <&c>Level 5  <&f>|<&c>  Water Strike
   - <&c>Level 9  <&f>|<&c>  Vex Strike<&4>*
   - <&c>Level 13 <&f>|<&c>  Fire Strike
 IntermediateSpellbook_Item:
-  type: item 
+  type: item
   debug: false
   material: enchanted_book
   display name: "<&4>I<&c>ntermediate <&4>S<&c>pells"
-  enchantments: 
-    - vanishing_curse:1 
-  mechanisms: 
-    flags: HIDE_ENCHANTS 
+  enchantments:
+    - vanishing_curse:1
+  mechanisms:
+    flags: HIDE_ENCHANTS
   lore:
   - <&c>Level 17 <&f>|<&c>  Air Bolt
   - <&c>Level 23 <&f>|<&c>  Water Bolt<&4>*
