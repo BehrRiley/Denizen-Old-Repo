@@ -24,18 +24,28 @@ Colorize:
         - define Text li@
         - foreach <[String].split[<&sp>]>:
             - define String1 <[1]><[value].split[].get[1]>
-            - define String2 <[2]><[value].split[].get[2].to[99].separated_by[]>
+            - if <[value].split[].size> == 1:
+                - define String2 <[2]>
+            - else:
+                - define String2 <[2]><[value].split[].get[2].to[99].separated_by[]>
             - define Text <[Text].include[<[String1]><[String2]>]>
         # - Separate
         - define Text <[Text].separated_by[<&sp>]>
-        # - Brackets
-        - define Text <[Text].replace[<&lb>].with[<[1]><&lb><[2]>].replace[<&rb>].with[<[1]><&rb><[2]>]>
-        # - Carrots
-        - define Text <[Text].replace[<&gt>].with[<[1]><&gt><[2]>].replace[<&lt>].with[<[1]><&lt><[2]>]>
-        # - Periods & Comma
-        - define Text <[Text].replace[.].with[<[1]>.<[2]>].replace[,].with[<[1]>,<[2]>]>
-        # - Exclamation & Colons
-        - define Text <[Text].replace[!].with[<[1]>!<[2]>].replace[<&co>].with[<[1]><&co><[2]>]>
-        # - Forward and Backward Slash
-        - define Text <[Text].replace[/].with[<[1]>/<[2]>].replace[<&bs>].with[<[1]><&bs><[2]>]>
+        #$REGEX
+        - define Regex (<element[!@#$%^&*(),.:;'"{}].split[].after[li@]>)
+        - define Text <[Text].replace[regex:(<&lt>|<&gt>|\.|,|\#|\$|%|\^|\&|\*|-|_|/|\{|\}|\(|\)|\<&lb>|@|:|;|\<&rb>)].with[<[1]>$1<[2]>]>
+        ## - Brackets
+        #- define Text <[Text].replace[<&lb>].with[<[1]><&lb><[2]>].replace[<&rb>].with[<[1]><&rb><[2]>]>
+        ## - Braces
+        #- define Text <[Text].replace[{].with[<[1]>{<[2]>].replace[}].with[<[1]>}<[2]>]>
+        ## - Parentheses
+        #- define Text <[Text].replace[(].with[<[1]>(<[2]>].replace[)].with[<[1]>)<[2]>]>
+        ## - Carrots
+        #- define Text <[Text].replace[<&gt>].with[<[1]><&gt><[2]>].replace[<&lt>].with[<[1]><&lt><[2]>]>
+        ## - Periods & Comma
+        #- define Text <[Text].replace[.].with[<[1]>.<[2]>].replace[,].with[<[1]>,<[2]>]>
+        ## - Exclamation & Colons
+        #- define Text <[Text].replace[!].with[<[1]>!<[2]>].replace[<&co>].with[<[1]><&co><[2]>]>
+        ## - Forward and Backward Slash
+        #- define Text <[Text].replace[/].with[<[1]>/<[2]>].replace[<&bs>].with[<[1]><&bs><[2]>]>
         - Determine <[Text]>
