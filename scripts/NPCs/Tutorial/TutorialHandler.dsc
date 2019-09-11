@@ -41,19 +41,19 @@ Tutorial_Reminder_Task:
    # ^ ██ [ Gielinor Guide ] ██
       - case "Start":
         - while <player.has_flag[Tutorial.Start]>:
-          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>
+          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>:
             - if !<player.has_flag[Tutorial.ReminderCooldown]>:
               - narrate "<&e>Right-Click on the Gielinor Guide, or just say hi to him. He is indicated by a flashing yellow arrow."
           #$ animate arrow above NPC
           - wait 5t
       - case "OptionsMenu":
         - while <player.flag[Tutorial.Stage]> == 'OptionsMenu':
-          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>
+          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>:
             - if !<player.has_flag[Tutorial.ReminderCooldown]>:
               - narrate "<&e>Right click with the flashing handbook found in your inventory. This will display your options menu"
       - case "EndFirstEncounter":
         - while <player.flag[Tutorial.Stage]> == 'EndFirstEncounter':
-          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>
+          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>:
             - if !<player.has_flag[Tutorial.ReminderCooldown]>:
               - narrate "<&e>To continue, all you need to do is click on the door."
           #$ ██ [ animate highlight around door ] ██
@@ -61,7 +61,7 @@ Tutorial_Reminder_Task:
     # ^ ██ [ First Instructor ] ██
       - case "FirstInstructor":
         - while <player.flag[Tutorial.Stage]> == 'FirstInstructor':
-          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>
+          - if <[Loop_Index].mod[<element[2].mul[<element[60].div[5]>]>]>:
             - if !<player.has_flag[Tutorial.ReminderCooldown]>:
               - narrate "<&e>Follow the path to the next instructor. Talk to the survival expert to continue the tutorial."
           #$ ██ [ animate path to first instructor, arrow above NPC ] ██
