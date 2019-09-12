@@ -11,6 +11,9 @@ midi/
 data/
 .vscode/
 
+# File-types
+*.old
+
 # Executables
 *.swf
 *.air
