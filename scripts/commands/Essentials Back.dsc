@@ -2,7 +2,7 @@
 # % ██    /back - returns you to where you teleported from
 # | ██
 # % ██  [ Command ] ██
-# $ ██  [ TO-DO   ] ██ | furnish script |
+# $ ██  [ TO-DO   ] ██ | furnish script | cooldown
 back_Command:
     type: command
     name: back
@@ -17,9 +17,10 @@ back_Command:
             - narrate "<proc[Colorize].context[You cannot return with enemies near-by.|red]>"
         - else:
             - if <player.has_flag[behrry.essentials.teleport.back]>:
+                - define BacLoc <player.flag[behrry.essentials.teleport.back].as_location>
                 - narrate "<proc[Colorize].context[Returning to last location.|green]>"
                 - flag <player> behrry.essentials.teleport.back:<player.location>
-                - teleport <player.flag[behrry.essentials.teleport.back]>
+                - teleport <player> <[BacLoc]>
             - else:
                 - narrate "<proc[Colorize].context[No back location to return to.|red]>"
 
