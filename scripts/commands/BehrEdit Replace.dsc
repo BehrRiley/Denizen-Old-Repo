@@ -1,3 +1,14 @@
+# | ███████████████████████████████████████████████████████████
+# % ██    //replace - used to replace any set of blocks with
+# % ██    another block type, or types, based on percentages
+# | ██
+# % ██    //replace glass        |Replaces all non-air blocks with glass
+# % ██    //replace dirt stone   |Replaces all dirt blocks with stone
+# % ██    //replace dirt air stone air grass_block glass     |Replaces all dirt and stone with air, grass_block with glass.
+# % ██    //replace stone 25%stone_brick,25%stone,25%andesite,25%cobblestone dirt 20%coarse_dirt,60%dirt,10%grass_block,5%grass_path,5%gravel  |self explainatory
+# | ██
+# % ██  [ Command ] ██
+# $ ██  [ TO-DO   ] ██ | look for switches and opportunities
 Replace_Command:
     type: command
     name: /replace
@@ -142,14 +153,3 @@ Replace_Command:
           - define Command "/replace "
           - define Hover "<proc[Colorize].context[Nothing was replaced. You entered:|red]><&nl><&c>//replace <[FromMaterial<[Value]>]> <[ToMaterial<[Value]>]><&nl><&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <script.yaml_key[Use].parsed>"
         - narrate <proc[MsgHint].context[<def[Message]>|<def[Command]>|<def[Hover]>]>
-    
-
-Command_Syntax:
-  type: task
-  debug: false
-  script:
-    - define Command "<queue.script.yaml_key[aliases].get[1]||<queue.script.yaml_key[Name]>> "
-    - define Hover "<&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <queue.script.yaml_key[Use].parsed>"
-    - define Message "<&6>S<&e>yntax<&6><&co> <queue.script.yaml_key[Use].parsed>"
-    - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
-    - stop
