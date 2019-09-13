@@ -18,6 +18,6 @@ deathback_Command:
         - if <player.has_flag[behrry.essentials.teleport.deathback]>:
             - narrate "<proc[Colorize].context[Returning to death location.|green]>"
             - flag <player> behrry.essentials.teleport.back:<player.location>
-            - teleport <player.flag[behrry.essentials.teleport.deathback]>
+            - teleport <player> <player.flag[behrry.essentials.teleport.deathback].as_location>
         - else:
             - narrate "<proc[Colorize].context[No death location to return to.|red]>"
