@@ -19,13 +19,13 @@ ThievingHandler:
           - take slot:5 from:<context.inventory>
         - define xp "<context.item.nbt[xpref]>"
         - wait 5t
-        - run add_xp def:<def[xp]>|Thieving instantly  
+        - run add_xp def:<def[xp]>|Thieving instantly
         - inventory close
 
 # % ██ [ Personal Notes
 # | ██ [ <npc.flag[Thieving.Table]> == Their Table to search for
 # | ██ [ <script.yaml_key[]>  == searching PickpocketInterface script
-# : ██ [ 
+# : ██ [
 # | ██ [ "<s@ThievingRef.yaml_key[]>" == searching inside "loot table" yaml ##Quotations Required
 # | ██ [ "<s@ThievingRef.yaml_key[Man]>" == 3
 # | ██ [ "<s@ThievingRef.yaml_key[<npc.flag[Thieving.Table]>]> == 3"
