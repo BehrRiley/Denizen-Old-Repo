@@ -8,6 +8,16 @@ Command_Syntax:
     - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
     - stop
 
+Permission_Verification:
+  type: task
+  debug: false
+  script:
+    - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>
+      - define Hover "<proc[Colorize].context[Permission Required:|red]> <&6><[Rank]>"
+      - define Message "<proc[Colorize].context[You don't have permission to do that.|red]>"
+      - narrate <proc[HoverMsg].context[<[Message]>|<[Hover]>]>
+      - stop
+
 Player_Verification:
   type: task
   debug: false
