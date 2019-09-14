@@ -1,3 +1,30 @@
+BwandMenu:
+  type: inventory
+  inventory: Dispenser
+  debug: false
+  title: "<&2>B<&a>ehr<&2>E<&a>dit <&2>M<&a>enu"
+  procedural items:
+    - define list li@
+    - define item1 "i@player_head[nbt=li@key/mode cuboid;display_name=<&6>M<&e>ode<&6><&co> <&2>C<&a>uboid;skull_skin=09201882-f3e9-4267-aedb-f9a1e039009e|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDliMzAzMDNmOTRlN2M3ODVhMzFlNTcyN2E5MzgxNTM1ZGFmNDc1MzQ0OWVhNDFkYjc0NmUxMjM0ZTlkZDJiNSJ9fX0=]"
+    - define item2 "i@player_head[nbt=li@key/mode ExpandingCuboid;display_name=<&6>M<&e>ode<&6><&co> <&2>E<&a>xpanding <&2>C<&a>uboid;skull_skin=9000dd5d-fe9a-40f9-8724-5f9165616929|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTNjYTdkN2MxNTM0ZGM2YjllZDE2NDdmOTAyNWRkZjI0NGUwMTA3ZGM4ZGQ0ZjRmMDg1MmM4MjA4MWQ2MzUwZSJ9fX0=]"
+    - define item3 "i@player_head[nbt=li@key/mode IrregularPolygon;display_name=<&6>M<&e>ode<&6><&co> <&2>I<&a>rregular <&2>P<&a>olygon;skull_skin=29845bee-1871-46e3-9032-570e97ccf47e|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk1ZTFlMmZiMmRlN2U2Mjk5YTBmNjFkZGY3ZDlhNmQxMDFmOGQ2NjRmMTk1OWQzYjY3ZGNlOGIwNDlhOGFlMSJ9fX0=]"
+
+    - define item4 "i@player_head[nbt=li@key/selection clear;display_name=<&4>C<&c>lear <&4>C<&c>lipboard;skull_skin=5c36282e-4536-4f10-8e66-a2f24b57ecad|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjJlNTk0ZWExNTQ4NmViMTkyNjFmMjExMWU5NTgzN2FkNmU5YTZiMWQ1NDljNzBlY2ZlN2Y4M2U0MTM2MmI1NyJ9fX0=]"
+    - define item5 "i@player_head[nbt=li@key/monitor;display_name=<&2>D<&a>isplay <&2>S<&a>election;skull_skin=eb3d9984-b0d2-4377-8e1d-0bfd04045ccc|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGU1ODVmNjQzNGRiYTczMTMyYzRiMzg0OWJiMzc3ZjRhYjVjMDEzMzA3NjNhOGViOTQxN2I2ZTJkMDRmOWMzMiJ9fX0=]"
+    - define item6 "i@player_head[display_name=<&2>D<&a>elete <&2>L<&a>ast;skull_skin=4d37c12c-eb19-4499-8c62-33d84c4d9761|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTVkNWM3NWY2Njc1ZWRjMjkyZWEzNzg0NjA3Nzk3MGQyMjZmYmQ1MjRlN2ZkNjgwOGYzYTQ3ODFhNTQ5YjA4YyJ9fX0=]"
+
+    - define item7 "i@player_head[nbt=li@key/selection clipboard;display_name=<&2>S<&a>election <&2>t<&a>ag]>;skull_skin=0bf42e07-8ca6-49a0-8de3-8762f9d169a5|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOWJlNzIwMzlhNDBmMTAwMmZiYTZhYjFiYjVmN2YwMGQ3MGY1M2I0YjQ4YzJlOWJmMGYxYmVhNzA4MzAwODFhYyJ9fX0=]"
+    - define item8 "i@player_head[nbt=li@key/mode filler;display_name=<&6>M<&e>ode<&6><&co> <&2>F<&a>iller;skull_skin=710b5eec-602d-49ed-b73b-9f10bb57c579|eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjBhM2FmMTg3YmI4YjgzZTVhZjU2NmZiNmFmZGNmZjMzZTM2NDc2ZmIzNGIxOTA5NmYyYjU3ZDMzMTJmZTI5MiJ9fX0=]"
+
+    - define list <list[<[item1]>|<[item2]>|<[item3]>|<[item4]>|<[item5]>|<[item6]>|<[item7]>|<[item8]>]>
+   #- define "item<[Loop_index]>" "<[item<[Loop_index]>]>[nbt=li@key/<[Value]>]"
+   #- define list <[list].include[<[item<[Loop_index]>]>]>
+    - determine <[list]>
+  slots:
+    - "[] [] []"
+    - "[] [] []"
+    - "[] [] []"
+
 # : ████████████████████████████████████████████████████
 # | ██   Main Spellbook | Normal Spellbook
 # : ██
