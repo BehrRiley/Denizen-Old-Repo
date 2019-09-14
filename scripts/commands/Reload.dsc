@@ -12,3 +12,5 @@ rh:
         on reload scripts:
             - if <context.haderror>:
                 - announce "<&c>Error Reloading Scripts"
+            - else:
+                - announce "<&a>Reloaded"
