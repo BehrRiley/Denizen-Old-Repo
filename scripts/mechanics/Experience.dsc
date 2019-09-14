@@ -6,7 +6,7 @@
 # | ███ [    - run add_xp_nostring def:<#>|<skill>|<player> instantly             ] ███
 # | ███ [   ex:run add_xp_nostring def:100|farming|<player[Behr_Riley]> instantly ] ███
 
-# % ███ [ returns xp needed for next level                                        ] ███ 
+# % ███ [ returns xp needed for next level                                        ] ███
 xp_calc:
     type: procedure
     definitions: lvl
@@ -15,7 +15,7 @@ xp_calc:
         - define mul_term <element[300].mul[<element[2].power[<[pow_term]>]>]>
         - determine <[lvl].add[<[mul_term]>].div[4].round_down>
 
-# % ███ [ Grants the provided amount of xp to a player                            ] ███ 
+# % ███ [ Grants the provided amount of xp to a player                            ] ███
 add_xp:
   type: task
   definitions: xp|skill
@@ -35,7 +35,7 @@ add_xp:
           - else:
               - flag player <[skill]>.ExpReq:+:<[xp].add[<[to_add]>]>
 
-# % ███ [ Grants the provided amount of xp to an unstrung player                  ] ███ 
+# % ███ [ Grants the provided amount of xp to an unstrung player                  ] ███
 add_xp_nostring:
   type: task
   definitions: xp|skill|player
