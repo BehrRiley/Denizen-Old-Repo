@@ -22,7 +22,7 @@ SetHome_Command:
         - if <player.flag[behrry.essentials.homes.name].contains[<[Name]>]||null>:
             - narrate "<proc[Colorize].context[This home name already exists.|red]>"
         - else:
-            - if <[Name].matches[[a-zA-Z0-9]+]>:
+            - if <[Name].matches[[a-zA-Z0-9-_]+]>:
                 - flag <player> behrry.essentials.homes.name:->:<context.args.get[1]>
                 - flag <player> behrry.essentials.homes.location:->:<player.location.simple.as_location.add[0.5,0,0.5].with_yaw[<player.location.yaw>].with_pitch[<player.location.pitch>]>
                 - narrate "<proc[Colorize].context[New home set:|green]> <&e><context.args.get[1]>"
