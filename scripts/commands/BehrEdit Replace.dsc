@@ -23,18 +23,18 @@ Replace_Command:
       - if <context.args.size||0> == 0:
         - determine <[list]>
       - if <context.args.size.mod[2]> == 0:
-        - determine <[List].filter[starts_with[<context.args.last.after[%]>]]>
+        - determine <[List].filter[starts_with[<context.args.last>]]>
       - else if <context.args.size.mod[2]> == 1:
         - if !<context.raw_args.ends_with[<&sp>]>:
           - if <[List].filter[starts_with[<context.args.last>]].size> == 1 && <context.args.size> > 2:
-            - if <[List].filter[starts_with[<context.args.last.after[%]>]].get[1]> != <context.args.last.after[%]>:
-              - determine <[List].filter[starts_with[<context.args.last.after[%]>]]>
+            - if <[List].filter[starts_with[<context.args.last>]].get[1]> != <context.args.last>:
+              - determine <[List].filter[starts_with[<context.args.last>]]>
             - else:
               - determine "<&4>Specify Second Material"
-          - determine <[List].filter[starts_with[<context.args.last.after[%]>]]>
+          - determine <[List].filter[starts_with[<context.args.last>]]>
         - else:
           - if <context.args.size> < 2:
-            - determine <[List].filter[starts_with[<context.args.last.after[%]>]]>
+            - determine <[List].filter[starts_with[<context.args.last>]]>
           - else:
             - determine "<&4>Specify Second Material"
     Error:
@@ -136,10 +136,14 @@ Replace_Command:
                 - define ModReplaceList <[ReplaceList]>
               - foreach <[ModReplaceList]> as:Block:
                 - modifyblock <[Block]> <[MultiArg].after[%]>
+                - if <[Loop_Index].mod[100]> == 1:
+                    - wait 1t
             - define text "Replaced [<[ReplaceList].size>] blocks with <[ToMaterial<[Value]>].split[,].formatted.replace[<&pc>].with[<&pc> ]>."
           - else:
             - foreach <[ReplaceList]> as:Block:
               - modifyblock <[Block]> <[ToMaterial<[Value]>]>
+              - if <[Loop_Index].mod[100]> == 1:
+                  - wait 1t
             - define text "Replaced [<[ReplaceList].size>] blocks with <[ToMaterial<[Value]>]>."
 
         - define Message "<proc[Colorize].context[<[Text]||Nothing interesting happens.>|yellow]>"
