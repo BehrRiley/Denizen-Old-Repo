@@ -7,6 +7,8 @@ Essentials:
     type: world
     debug: false
     events:
+      on system time minutely every:5:
+        - execute as_server "save-all"
       on player chats:
         - determine passively cancelled
         - if <player.has_flag[Interacting_NPC]>:
@@ -51,6 +53,7 @@ testhold:
       - narrate hi
 
 
+      
 
 
      # on tab complete priority:lowest:
