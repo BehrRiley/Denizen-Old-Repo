@@ -14,7 +14,7 @@ tablist:
     events:
       on delta time secondly:
         - foreach <server.list_online_players>:
-          - if <context.second.mod[2]> == 1:
+          - if <context.second.mod[20]> >= 10:
             - adjust <[value]> "player_list_name:<[value].name>"
           - else:
             - adjust <[value]> "player_list_name:<[value].name.display.parse_color>"
