@@ -114,6 +114,9 @@ BehrEdit_Position_Command_Task:
     - flag player Behredit.Position:!
     - flag player BehrEdit.Selection.Cuboid:!
   script:
+    - if <player.flag[behrry.essentials.rank]> > 2:
+      - narrate "<proc[colorize].context[Nothing interesting happens.|yellow]>"
+      - stop
     - if <context.args.get[1]||null> == null:
       - define Loc <player.location.simple.as_location>
     - else:
