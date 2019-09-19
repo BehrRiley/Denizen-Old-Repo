@@ -1,17 +1,17 @@
 # | ███████████████████████████████████████████████████████████
-# % ██    //stackdist - used to stack blocks a number of blocks in
+# % ██    //copymove - used to stack blocks a number of blocks in
 # % ██    a specific coordinated direction
 # | ██
-# % ██    //stackdist 10 | Copies and stacks the clipboard 10 blocks further
+# % ██    //copymove 10 | Copies and stacks the clipboard 10 blocks further
 # | ██
 # % ██  [ Command ] ██
-# $ ██  [ TO-DO   ] ██ | add feature for multi-directional - ie, //stackdist iron_block 5 north 5 up 5 east
+# $ ██  [ TO-DO   ] ██ | add feature for multi-directional - ie, //copymove iron_block 5 north 5 up 5 east
 Stack_Command:
   type: command
-  name: /stackdist
+  name: /copymove
   debug: false
-  description: Stacks selection a direction, optionally only by material(s)
-  use: "<proc[colorize].context[//stack <&lt>#<&gt> (Direction) (Material{NotAir}) |yellow]>"
+  description: Copies selection in a direction, optionally only by material(s)
+  use: "<proc[colorize].context[//copymove <&lt>#<&gt> (Direction) (Material{NotAir}) |yellow]>"
   tab complete:
     - if <context.args.size||0> == 0:
       - stop
