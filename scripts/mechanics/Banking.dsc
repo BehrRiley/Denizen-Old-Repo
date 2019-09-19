@@ -103,11 +103,7 @@ PlayerBank_Handler:
       - inject Locally Inventory_Save
     on player clicks blank in inventory:
       - determine cancelled
-    on player clicks LastPageArrow in inventory:
-      - determine passively cancelled
-      - inject locally Inventory_Save
-      - run Open_Bank def:<context.item.nbt[bankid]> Instantly
-    on player clicks NextPageArrow in inventory:
+    on player clicks LastPageArrow|NextPageArrow in inventory:
       - determine passively cancelled
       - inject locally Inventory_Save
       - run Open_Bank def:<context.item.nbt[bankid]> Instantly
