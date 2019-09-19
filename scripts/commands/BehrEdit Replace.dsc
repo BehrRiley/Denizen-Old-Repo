@@ -120,31 +120,28 @@ Replace_Command:
             - if <[Block].material.name> == <[FromMaterial<[Value]>]>:
               - define ReplaceList <[ReplaceList].include[<[Block]>]>
         #----------------------------------------------#
-        - define YamlNum <yaml[<player>].read[BehrEdit.Clipboard.undo.blocks].size.add[1]||1>
-        - if <[ReplaceList].size> != 0:
-          - yaml id:<player> set BehrEdit.Clipboard.Undo.Blocks:->:<[YamlNum]>burrito<[ReplaceList].escaped>
-          - yaml id:<player> set BehrEdit.Clipboard.Undo.Materials:->:<[YamlNum]>burrito<[ReplaceList].parse[Material].escaped>
-          - yaml id:<player> savefile:data/pData/<player.uuid>.yml
-          
-          - if <[MultiArgs].contains[<[Value].mul[2]>]> || <context.args.get[1].contains[%]>:
-            - define ModReplaceList null
-            - foreach <[ToMaterial<[Value]>].split[,]> as:MultiArg:
-              - define ModReplaceList <[ReplaceList].random[<[ReplaceList].size.mul[<[MultiArg].before[%].div[100]>].round_down>]>
-              - if <[MultiArgs].size> != <[Loop_Index]>:
-                - define ReplaceList:<-:<[ModReplaceList]>
-              - else:
-                - define ModReplaceList <[ReplaceList]>
-              - foreach <[ModReplaceList]> as:Block:
-                - modifyblock <[Block]> <[MultiArg].after[%]>
-                - if <[Loop_Index].mod[100]> == 1:
-                    - wait 1t
-            - define text "Replaced [<[ReplaceList].size>] blocks with <[ToMaterial<[Value]>].split[,].formatted.replace[<&pc>].with[<&pc> ]>."
-          - else:
-            - foreach <[ReplaceList]> as:Block:
-              - modifyblock <[Block]> <[ToMaterial<[Value]>]>
+        - define Blocks <[ReplaceList]>
+        - inject BehrEdit_Undo_Save_Static
+        
+        - if <[MultiArgs].contains[<[Value].mul[2]>]> || <context.args.get[1].contains[%]>:
+          - define ModReplaceList null
+          - foreach <[ToMaterial<[Value]>].split[,]> as:MultiArg:
+            - define ModReplaceList <[ReplaceList].random[<[ReplaceList].size.mul[<[MultiArg].before[%].div[100]>].round_down>]>
+            - if <[MultiArgs].size> != <[Loop_Index]>:
+              - define ReplaceList:<-:<[ModReplaceList]>
+            - else:
+              - define ModReplaceList <[ReplaceList]>
+            - foreach <[ModReplaceList]> as:Block:
+              - modifyblock <[Block]> <[MultiArg].after[%]>
               - if <[Loop_Index].mod[100]> == 1:
                   - wait 1t
-            - define text "Replaced [<[ReplaceList].size>] blocks with <[ToMaterial<[Value]>]>."
+          - define text "Replaced [<[ReplaceList].size>] blocks with <[ToMaterial<[Value]>].split[,].formatted.replace[<&pc>].with[<&pc> ]>."
+        - else:
+          - foreach <[ReplaceList]> as:Block:
+            - modifyblock <[Block]> <[ToMaterial<[Value]>]>
+            - if <[Loop_Index].mod[100]> == 1:
+                - wait 1t
+          - define text "Replaced [<[ReplaceList].size>] blocks with <[ToMaterial<[Value]>]>."
 
         - define Message "<proc[Colorize].context[<[Text]||Nothing interesting happens.>|yellow]>"
         - if <context.args.get[2]||null> == null:
