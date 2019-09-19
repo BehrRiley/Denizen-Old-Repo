@@ -9,8 +9,6 @@ Set_Command:
     name: /set
     debug: false
     description: Sets a selection to a material
-    aliases:
-        - /set
     use: "<proc[colorize].context[//set <&lt>Material<&gt>|yellow]>"
     tab complete:
         - define BlackList <list[Grass|Bedrock]>
@@ -57,13 +55,7 @@ Set_Command:
             - inject locally Error Instantly
         # @ ██ [ Run Command    ] ██
         - define Blocks <[Cuboid].blocks>
-
-        - define YamlNum <yaml[<player>].read[BehrEdit.Clipboard.undo.blocks].size.add[1]||1>
-        - if <[Blocks].size> != 0:
-            - yaml id:<player> set BehrEdit.Clipboard.Undo.Blocks:->:<[YamlNum]>burrito<[Blocks].escaped>
-            - yaml id:<player> set BehrEdit.Clipboard.Undo.Materials:->:<[YamlNum]>burrito<[Blocks].parse[Material].escaped>
-            - yaml id:<player> savefile:data/pData/<player.uuid>.yml
-
+        - Inject BehrEdit_Undo_Save_Static instantly
 
         - foreach <[Blocks]> as:Block:
             - modifyblock <[Block]> <[Material]>
