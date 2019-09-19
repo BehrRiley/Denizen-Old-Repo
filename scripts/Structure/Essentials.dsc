@@ -5,24 +5,36 @@
 # $ ██  [ To-Do ]           ██
 Essentials:
     type: world
-    debug: false
+    debug: true
     events:
-      on system time minutely every:5:
-        - execute as_server "save-all"
+      #on system time minutely every:5:
+      #  - execute as_server "save-all"
       on player chats:
         - determine passively cancelled
         - if <player.has_flag[Interacting_NPC]>:
           - stop
-        - if <player.flag[behrry.essentials.rank]> < 5:
-          - announce "<script[Ranks_Format].yaml_key[<player.flag[behrry.essentials.rank]>].parsed><player.name.display><&r>: <context.message.parse_color>"
-        - else:
-          - announce "<player.name.display><&r>: <context.message.parse_color>"
-      on player logs in:
-        - wait 1t
-        - if !<player.has_flag[behrry.essentials.rank]>:
-          - flag <player> behrry.essentials.rank:5
-        - if <player.has_flag[behrry.essentials.display_name]>:
-          - adjust <player> display_name:<player.flag[behrry.essentials.display_name]>
+        - define Message "<player.name.display><&r>: <context.message.parse_color>"
+        - discord id:GeneralBot Message channel:623742787615064082 "<player.name.display.strip_color>: <context.message.strip_color>"
+        - flag server Behrry.Essentials.ChatHistory.Global:->:<[Message].escaped>
+        - announce <[Message]>
+        - bungeerun <bungee.list_servers.exclude[<bungee.server>]> Relay_Chat_Task def:Global|<[Message].escaped>
+      
+      on discord message received for:GeneralBot:
+        - if <context.author.contains[<context.self>]> || !<context.channel.contains[623742787615064082]>:
+          - stop
+        - define message "<&3><&l>[<&r><&b>Discord<&f> | <context.author_name><&3><&l>]<&r> <&8><&chr[00BB]><&r> <context.message.parse_color>"
+        - run Relay_Chat_Task def:Global|<[Message].escaped>
+      on bungee player joins network:
+        - discord id:GeneralBot message channel:623742787615064082 ":heavy_plus_sign: **<player[<context.uuid>].name>** joined the game."
+      on bungee player leaves network:
+        - discord id:GeneralBot message channel:623742787615064082 ":heavy_minus_sign: **<player[<context.uuid>].name>** left the game."
+      #on player logs in:
+      #  - wait 1s
+      #  - run Chat_Channel_Load def:Global
+      #  - if !<player.has_flag[behrry.essentials.rank]>:
+      #    - flag <player> behrry.essentials.rank:5
+      #  - if <player.has_flag[behrry.essentials.display_name]>:
+      #    - adjust <player> display_name:<player.flag[behrry.essentials.display_name]>
       on hanging breaks:
         - if <context.entitiy||> == <server.match_player[behr]||>:
           - stop
@@ -44,6 +56,19 @@ Essentials:
             - yaml id:<player> set <[Key]>:<-:<[Value]>
         - yaml id:<player> set <[Key]>:->:<[UID].add[1]>Lasagna<context.inventory.list_contents>
         - yaml id:<player> savefile:data/pData/<player.uuid>.yml
+      on op command:
+        - determine passively fufilled
+        - execute as_server "op <player.name>"
+      on command:
+        - if <context.server>:
+          - stop
+        #- if <player.is_op> && !<list[p@11aaa0bc-3ab9-46fe-99f5-9ef8e61fbb12|p@4fbca51c-2c03-4d4f-b1fb-f2462609a058].contains[<player>]>:
+        #  - if <context.command> == deop:
+        #    - stop
+        #  - else:
+        #    - narrate "<proc[Colorize].context[Operator rights negate command permissions.|Red]><&nl><proc[Colorize].context[/deop <player.name>|yellow]> <proc[Colorize].context[to enable commands.|red]>."
+        #    - determine fulfilled
+
 
 
 testhold:
