@@ -30,6 +30,10 @@ Nickname_Command:
         - if !<[Nickname].matches[[a-zA-Z0-9-_\&]+]>
             - narrate "Nicknames should be alphanumerical."
             - stop
+        - define Blacklist "<list[Admin|a d m i n|mod|owner|owna|boss|leader]>"
+        - if <[Nickname].parse_color.strip_color.contains_any[<[Blacklist]>]>
+            - narrate "Illegal Name."
+            - stop
         - if <[Nickname].length> > 16:
             - narrate "Nicknames should be less than 16 charaters."
             - stop
