@@ -24,10 +24,16 @@ Essentials:
           - stop
         - define message "<&3><&l>[<&r><&b>Discord<&f> | <context.author_name><&3><&l>]<&r> <&8><&chr[00BB]><&r> <context.message.parse_color>"
         - run Relay_Chat_Task def:Global|<[Message].escaped>
-      on bungee player joins network:
-        - discord id:GeneralBot message channel:623742787615064082 ":heavy_plus_sign: **<player[<context.uuid>].name>** joined the game."
-      on bungee player leaves network:
-        - discord id:GeneralBot message channel:623742787615064082 ":heavy_minus_sign: **<player[<context.uuid>].name>** left the game."
+      #on bungee player joins network:
+      #  - if <player[<context.uuid>].name||null> == null:
+      #    - stop
+      #  - else:
+      #    - discord id:GeneralBot message channel:623742787615064082 ":heavy_plus_sign: **<player[<context.uuid>].name>** joined the game."
+      #on bungee player leaves network:
+      #  - if <player[<context.uuid>].name||null> == null:
+      #    - stop
+      #  - else:
+      #    - discord id:GeneralBot message channel:623742787615064082 ":heavy_minus_sign: **<player[<context.uuid>].name>** left the game."
       #on player logs in:
       #  - wait 1s
       #  - run Chat_Channel_Load def:Global
@@ -56,18 +62,9 @@ Essentials:
             - yaml id:<player> set <[Key]>:<-:<[Value]>
         - yaml id:<player> set <[Key]>:->:<[UID].add[1]>Lasagna<context.inventory.list_contents>
         - yaml id:<player> savefile:data/pData/<player.uuid>.yml
-      on op command:
-        - determine passively fufilled
-        - execute as_server "op <player.name>"
-      on command:
-        - if <context.server>:
-          - stop
-        #- if <player.is_op> && !<list[p@11aaa0bc-3ab9-46fe-99f5-9ef8e61fbb12|p@4fbca51c-2c03-4d4f-b1fb-f2462609a058].contains[<player>]>:
-        #  - if <context.command> == deop:
-        #    - stop
-        #  - else:
-        #    - narrate "<proc[Colorize].context[Operator rights negate command permissions.|Red]><&nl><proc[Colorize].context[/deop <player.name>|yellow]> <proc[Colorize].context[to enable commands.|red]>."
-        #    - determine fulfilled
+      on pl command:
+        - determine passively fulfilled
+        - narrate "Plguins (6): <&a>BehrEdit<&f>, <&a>BehrryEssentials<&f>, <&a>Citizens<&f>, <&a>Denizen<&f>, <&a>Depenizen<&f>, <&a>dDiscordBot"
 
 
 
