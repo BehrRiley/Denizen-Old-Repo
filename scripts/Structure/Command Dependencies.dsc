@@ -8,6 +8,16 @@ Command_Syntax:
     - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
     - stop
 
+Command_Error:
+  type: task
+  debug: false
+  script:
+    - define Command "<queue.script.yaml_key[aliases].get[1]||<context.alias>> "
+    - define Hover "<proc[Colorize].context[You typed:|red]><&r><&nl><&c>/<context.alias> <context.raw_args><&nl><&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <queue.script.yaml_key[Use].parsed>"
+    - define Message "<proc[Colorize].context[<[Reason]>|red]>"
+    - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
+    - stop
+
 Permission_Verification:
   type: task
   debug: false
