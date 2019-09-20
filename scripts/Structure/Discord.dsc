@@ -17,11 +17,13 @@ Discord_Bots:
     - debug approval "Loading General Bot..."
     - ~discord id:GeneralBot connect code:<yaml[DiscBot_temp].read[bots.discord.GeneralBotToken]>
     - wait 5s
+    - discord id:GeneralBot message channel:623742787615064082 ":white_check_mark: **Server has started.**"
     - debug approval "Loading BehrBot..."
     - ~discord id:BehrBot connect code:<yaml[DiscBot_temp].read[bots.discord.GeneralBotToken]>
     - yaml unload id:DiscBot_temp
 # $ ███ [ Server Shutdown      ] ███
     on shutdown:
+      - discord id:generalbot message channel:623742787615064082 ":no_entry: **Server is restarting. Please wait. **"
       - discord id:GeneralBot disconnect
       - discord id:BehrBot disconnect
 
@@ -41,7 +43,7 @@ Chat_Channel_Load:
   definitions: Channel
   debug: false
   script:
-    - define History <server.flag[Behrry.Essentials.ChatHistory.Global]>
-    - foreach <[History].reverse.get[1].to[25].reverse> as:Message:
+    - foreach <server.flag[Behrry.Essentials.ChatHistory.Global].reverse.get[1].to[25].reverse.as_list||> as:Message:
       - narrate <[Message].unescaped>
     - narrate "<proc[Colorize].context[Channel Loaded: <[Channel]>|green]>"
+  
