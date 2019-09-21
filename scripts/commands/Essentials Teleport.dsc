@@ -35,9 +35,6 @@ teleport_Command:
                 - define PlayerList:->:<[User]>
             - define User <context.args.last>
             - inject Player_Verification
-            - if <[User]> == <player>:
-                - define reason "You cannot teleport to yourself."
-                - inject Command_Error Instantly
             - foreach <[PlayerList]> as:Player:
                 - teleport <[Player]> <[User].location>
                 - narrate targets:<[Player]> "<proc[Colorize].context[You were teleported to:|green]> <&r><[User].name.display>"
