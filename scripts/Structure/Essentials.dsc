@@ -9,6 +9,8 @@ Essentials:
     events:
         on system time minutely every:15:
             - execute as_server "save-all"
+        on system time hourly every:12:
+            - adjust restart
         on restart command:
             - bungeeexecute "send <bungee.server> MainHub"
         on stop command:
@@ -29,13 +31,16 @@ Essentials:
                 - flag <player> behrry.essentials.rank:5
             - if <player.has_flag[behrry.essentials.display_name]>:
                 - adjust <player> display_name:<player.flag[behrry.essentials.display_name]>
+        on player joins:
+            - wait 1s
+            - determine "<player.name.display> <proc[Colorize].context[joined the server.|green]>"
         on hanging breaks:
             - if <context.entitiy||> == <server.match_player[behr]||>:
                 - stop
             - else if <context.cause> == obstruction:
                 - determine cancelled
         on player right clicks Composter:
-            - if <context.location.material.level> == 8:
+            - if <context.location.material.level> == 8 && <player.world.name> == Gielinor:
                 - determine cancelled
         on player kicked:
             - if <context.reason> == "Illegal characters in chat":
