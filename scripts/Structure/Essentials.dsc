@@ -5,7 +5,7 @@
 # $ ██    [ To-Do ]                     ██
 Essentials:
     type: world
-    debug: true
+    debug: false
     events:
         on system time minutely every:15:
             - execute as_server "save-all"
@@ -52,4 +52,4 @@ Essentials:
             - yaml id:<player> savefile:data/pData/<player.uuid>.yml
         on pl command:
             - determine passively fulfilled
-            - narrate "Plguins (6): <&a>BehrEdit<&f>, <&a>BehrryEssentials<&f>, <&a>Citizens<&f>, <&a>Denizen<&f>, <&a>Depenizen<&f>, <&a>dDiscordBot"
+            - narrate "Plguins (5): <&a>BehrEdit<&f>, <&a>BehrryEssentials<&f>, <&a>Citizens<&f>, <&a>Denizen<&f>, <&a>Depenizen<&f>"
