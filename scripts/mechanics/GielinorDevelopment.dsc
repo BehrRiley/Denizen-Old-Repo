@@ -12,16 +12,14 @@ Tile_indicator_While:
 
         - flag <player> GielinorDevelopment.TileIndicator.Queue:<queue>
         - if <player.has_flag[GielinorDevelopment.TileIndicator.Monitor]>:
-            - define BlackList <list[air|grass|fern|tall_grass]>
+            - define BlackList <list[air|grass|fern|tall_grass|tall_fern]>
             - repeat 1:
                 - foreach <[RLocations]> as:RLocation:
                     - if <[Blacklist].contains[<[RLocation].material.name>]>:
-                        - if <[Blacklist].contains[<[RLocation].add[0,-2,0].material.name>]>:
-                            - define H -2
-                        - else if <[Blacklist].contains[<[RLocation].add[0,-1,0].material.name>]>:
-                            - define H -1
-                        - else:
-                            - define H 0
+                        - while true:
+                            - if <[Blacklist].contains[<[RLocation].add[0,-10,0].add[0,<[loop_index]>,0].material.name>]>:
+                                - define H <element[-10].add[<[Loop_index]>]>
+                                - while stop
                     - else if <[Blacklist].contains[<[RLocation].add[0,1,0].material.name>]>:
                         - define H 1
                     - else if <[Blacklist].contains[<[RLocation].add[0,2,0].material.name>]>:
@@ -31,12 +29,10 @@ Tile_indicator_While:
                     - playeffect effect:redstone at:<[RLocation].add[0,<[h]>,0]> offset:0 quantity:1 data:0 special_data:0.75|255,125,0
                 - foreach <[BLocations]> as:BLocation:
                     - if <[Blacklist].contains[<[BLocation].material.name>]>:
-                        - if <[Blacklist].contains[<[BLocation].add[0,-2,0].material.name>]>:
-                            - define H -2
-                        - else if <[Blacklist].contains[<[BLocation].add[0,-1,0].material.name>]>:
-                            - define H -1
-                        - else:
-                            - define H 0
+                        - while true:
+                            - if <[Blacklist].contains[<[BLocation].add[0,-10,0].add[0,<[loop_index]>,0].material.name>]>:
+                                - define H <element[-10].add[<[Loop_index]>]>
+                                - while stop
                     - else if <[Blacklist].contains[<[BLocation].add[0,1,0].material.name>]>:
                         - define H 1
                     - else if <[Blacklist].contains[<[BLocation].add[0,2,0].material.name>]>:
@@ -44,7 +40,7 @@ Tile_indicator_While:
                     - else:
                         - foreach next
                     - playeffect effect:redstone at:<[BLocation].add[0,<[h]>,0]> offset:0 quantity:2 data:0 special_data:0.75|0,125,255
-            - wait 5t
+            - wait 1t
             - run Tile_Indicator_Task Instantly def:<[RLocations].escaped>|<[BLocations].escaped> player:<server.match_player[behr]>
 
 Tile_Indicator_Task:
