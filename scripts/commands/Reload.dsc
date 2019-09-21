@@ -5,7 +5,7 @@ r:
     aliases:
         - /r
     script:
-        - if <player.flag[behrry.essentials.rank]||5> > 2 || !<context.server>:
+        - if <player.flag[behrry.essentials.rank]||5> > 2 && !<context.server>:
           - narrate "<proc[colorize].context[Nothing interesting happens.|yellow]>"
           - stop
         - reload
