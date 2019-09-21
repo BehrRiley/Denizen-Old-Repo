@@ -10,6 +10,7 @@ archive/
 midi/
 data/
 .vscode/
+notes/ResourceTemplate
 
 # File-types
 *.old
