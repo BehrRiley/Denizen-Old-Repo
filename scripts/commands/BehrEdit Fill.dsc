@@ -20,6 +20,9 @@ Fill_Command:
         - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
         - stop
     script:
+        - if !<player.has_flag[TestingCommands]>:
+            - narrate "<proc[colorize].context[This is a developmental command.>"
+            - determine cancelled
         - define Location <player.location.cursor_on>
         - define AirBlocks <list[<[Location]>]>
         - define Blocks li@
