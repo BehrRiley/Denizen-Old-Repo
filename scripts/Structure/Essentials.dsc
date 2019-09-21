@@ -8,7 +8,11 @@ Essentials:
     debug: true
     events:
         on system time minutely every:15:
-                    - execute as_server "save-all"
+            - execute as_server "save-all"
+        on restart command:
+            - bungeeexecute "send <bungee.server> MainHub"
+        on stop command:
+            - bungeeexecute "send <bungee.server> MainHub"
         on player chats:
             - determine passively cancelled
             - if <player.has_flag[Interacting_NPC]>:
