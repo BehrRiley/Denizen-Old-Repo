@@ -13,15 +13,15 @@ GMSP_Command:
     tab complete:
         - if <player.flag[Behrry.Essentials.Rank]> < 3:
             - if <context.args.size||0> == 0:
-            - determine <server.list_online_players.parse[name]>
+                - determine <server.list_online_players.parse[name]>
             - else if <context.args.size> == 1 && !<context.raw_args.ends_with[<&sp>]>:
-            - determine <server.list_online_players.parse[name].filter[starts_with[<context.args.get[1]>]]>
+                - determine <server.list_online_players.parse[name].filter[starts_with[<context.args.get[1]>]]>
     script:
         - if <context.args.get[2]||null> != null:
             - inject Command_Syntax Instantly
         - if <context.args.get[1]||null> == null:
             - define Rank 4
-            - if <player.flag[Behrry.Essentials.Rank]> < <[Rank]>:
+            - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>:
                 - inject Permission_Verification Instantly
             - else:
                 - if <player.gamemode> == spectator:
@@ -30,7 +30,7 @@ GMSP_Command:
                     - adjust <player> gamemode:spectator
         - else:
             - define Rank 5
-            - if <player.flag[Behrry.Essentials.Rank]> < <[Rank]>:
+            - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>:
                 - inject Permission_Verification Instantly
             - else:
                 - if <[User].gamemode> == spectator:
