@@ -1,23 +1,115 @@
+CustomSword:
+  type: item
+  debug: false
+  material: wooden_sword
+  mechanisms:
+    custom_model_data: 3
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+    unbreakable: TRUE
+  display name: <&6>Zamorakian Godsword
+  #<&a>◀ <&2>L<&a>ast <&2>P<&a>age <&2>◀
 LastPageArrow:
   type: item
   debug: false
-  material: tipped_arrow
+  material: music_disc_11
   mechanisms:
-    potion_effects: "INSTANT_HEAL,false,false"
-    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+    custom_model_data: 131
+    #potion_effects: "INSTANT_HEAL,false,false"
+    #flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
   display name: <&2><&chr[25c0]> <&2>L<&a>ast <&2>P<&a>age <&2><&chr[25c0]>
   #<&a>◀ <&2>L<&a>ast <&2>P<&a>age <&2>◀
 NextPageArrow:
   type: item
   debug: false
-  material: tipped_arrow
+  material: music_disc_11
   mechanisms:
-    potion_effects: "INSTANT_HEAL,false,false"
+    custom_model_data: 132
+    #potion_effects: "INSTANT_HEAL,false,false"
     flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
   display name: <&a><&chr[27a4]> <&2>N<&a>ext <&2>P<&a>age <&2><&chr[27a4]>
   #display name: <&a><&chr[25b6]> <&2>N<&a>ext <&2>P<&a>age <&2><&chr[25b6]>
-  #<&a>▶ <&2>N<&a>ext <&2>P<&a>age <&2>▶
+  #<&a>◀ <&2>L<&a>ast <&2>P<&a>age <&2>◀
+Combat_Slot:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 159
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>C<&a>ombat <&2>O<a>ptions
 
+Stat_Slot:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 143
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>S<&a>kills <&2>M<&a>enu
+
+Quest_Journal:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 148
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>Q<&a>uest <&2>J<&a>ournal
+
+Equipment_Slot:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 136
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>E<&a>quipment <&2>M<&a>enu
+  
+Prayer_Slot:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 146
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>P<&a>rayer <&2>M<&a>enu
+
+Magic_Spellbook:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 147
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>M<&a>agic <&2>S<&a>pellbook
+  
+Settings_Slot:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 160
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>S<&a>ettings
+
+Deposit_All:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 134
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>D<&a>eposit <&2>A<&a>ll
+
+
+Deposit_Equipement:
+  type: item
+  debug: false
+  material: music_disc_11
+  mechanisms:
+    custom_model_data: 133
+    flags: "li@HIDE_POTION_EFFECTS|HIDE_ENCHANTS|HIDE_ATTRIBUTES|HIDE_UNBREAKABLE|HIDE_DESTROYS|HIDE_PLACED_ON"
+  display name: <&2>D<&a>eposit <&2>A<&a>ll <&2>E<&a>quipment
 Blank:
   type: item
   debug: false
