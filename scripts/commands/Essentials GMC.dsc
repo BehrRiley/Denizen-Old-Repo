@@ -17,9 +17,9 @@ GMC_Command:
     tab complete:
         - if <player.flag[Behrry.Essentials.Rank]> < 3:
             - if <context.args.size||0> == 0:
-            - determine <server.list_online_players.parse[name]>
+                - determine <server.list_online_players.parse[name]>
             - else if <context.args.size> == 1 && !<context.raw_args.ends_with[<&sp>]>:
-            - determine <server.list_online_players.parse[name].filter[starts_with[<context.args.get[1]>]]>
+                - determine <server.list_online_players.parse[name].filter[starts_with[<context.args.get[1]>]]>
     Request:
         - define DisplayA "<&a>[<&2><&l><&chr[2714]><&r><&a>]"
         - define CommandA "gmc <player.name> accept"
@@ -64,7 +64,7 @@ GMC_Command:
                 - inject Command_Syntax Instantly
         - if <context.args.get[1]||null> == null:
             - define Rank 5
-            - if <player.flag[Behrry.Essentials.Rank]> < <[Rank]>:
+            - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>:
                 - if <player.has_flag[behrry.essentials.gamemode.request]>:
                     - narrate "<proc[Colorize].context[You've already requested Creative Mode.|red]>"
                 - else:
@@ -83,7 +83,7 @@ GMC_Command:
                     - adjust <player> gamemode:creative
         - else:
             - define Rank 4
-            - if <player.flag[Behrry.Essentials.Rank]> < <[Rank]>:
+            - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>:
                 - inject Permission_Verification Instantly
             - else:
                 - if <[User].gamemode> == creative:
