@@ -24,7 +24,7 @@ Open_Bank:
       - define RightArrow i@blank
     - else:
       - define RightArrow i@NextPageArrow[nbt=BankID/<[BankID].add[1]>]
-    - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|<[RightArrow]>"
+    - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Deposit_All|i@equipment_slot|i@Deposit_Equipement|<[RightArrow]>"
     #- foreach <[SoftMenu]>:
     #  - inventory add slot:<[loop_index].add[45]> d:in@<[pBank]> origin:<[value]>
     - define my_super_duper_lovey_item i@bankleftarrow
@@ -66,7 +66,7 @@ Open_Bank_Admin:
     - define RightArrow i@blank
   - else:
     - define RightArrow i@NextPageArrow[nbt=li@BankID/<[BankID].add[1]>|PlayerID/<[Player]>]
-  - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|<[RightArrow]>"
+  - define SoftMenu "li@<[LeftArrow]>|i@Blank|i@Blank|i@Blank|i@Blank|i@Blank|i@Deposit_All|i@Deposit_Equipement|<[RightArrow]>"
   - inventory set d:in@<[pBank]> o:<[SoftMenu]> slot:46
   - if <[items]> != null:
     - inventory set d:in@<[pBank]> o:<[items]>
