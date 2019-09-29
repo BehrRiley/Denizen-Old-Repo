@@ -21,7 +21,7 @@ GMS_Command:
             - inject Command_Syntax Instantly
         - if <context.args.get[1]||null> == null:
             - define Rank 4
-            - if <player.flag[Behrry.Essentials.Rank]> < <[Rank]>:
+            - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>:
                 - inject Permission_Verification Instantly
             - else:
                 - if <player.gamemode> == survival:
@@ -30,7 +30,7 @@ GMS_Command:
                     - adjust <player> gamemode:survival
         - else:
             - define Rank 5
-            - if <player.flag[Behrry.Essentials.Rank]> < <[Rank]>:
+            - if <player.flag[Behrry.Essentials.Rank]> > <[Rank]>:
                 - inject Permission_Verification Instantly
             - else:
                 - if <[User].gamemode> == survival:
