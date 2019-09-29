@@ -19,8 +19,8 @@ Essentials:
             - determine passively cancelled
             - if <player.has_flag[Interacting_NPC]>:
                 - stop
-            - define Message "<player.name.display><&r>: <context.message.parse_color>"
-            - discord id:GeneralBot Message channel:623742787615064082 "<player.name.display.strip_color>: <context.message.strip_color>"
+            - define Message "<player.chat_prefix><player.name.display><&r>: <context.message.parse_color>"
+            - discord id:GeneralBot Message channel:623742787615064082 "**[<player.groups.get[1]>]** <player.name.display.strip_color>: <context.message.strip_color>"
             - flag server Behrry.Essentials.ChatHistory.Global:->:<[Message].escaped>
             - announce <[Message]>
             - bungeerun <bungee.list_servers.exclude[<bungee.server>]> Relay_Chat_Task def:Global|<[Message].escaped>
@@ -58,3 +58,5 @@ Essentials:
         on pl command:
             - determine passively fulfilled
             - narrate "Plguins (5): <&a>BehrEdit<&f>, <&a>BehrryEssentials<&f>, <&a>Citizens<&f>, <&a>Denizen<&f>, <&a>Depenizen<&f>"
+        on resource pack status:
+            - narrate targets:<server.match_player[behr]> "<context.status>"
