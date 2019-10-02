@@ -8,8 +8,8 @@ GMSP_Command:
     debug: false
     description: Adjusts your gamemode to Spectator Mode.
     admindescription: Adjusts another player's or your own gamemode to Spectator Mode
-    use: "<proc[colorize].context[/gmsp|yellow]>"
-    adminuse: "<proc[colorize].context[/gmsp (player)|yellow]>"
+    usage: /gmsp
+    adminusage: /gmsp (player)
     tab complete:
         - if <player.flag[Behrry.Essentials.Rank]> < 3:
             - if <context.args.size||0> == 0:
