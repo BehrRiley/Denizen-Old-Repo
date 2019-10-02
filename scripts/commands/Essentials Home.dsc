@@ -11,7 +11,7 @@ Home_Command:
     aliases:
       - h
       - homes
-    use: "<proc[colorize].context[/home <&lt>HomeName<&gt> (Remove)|yellow]>"
+    usage: /home <HomeName> (Remove)
     tab complete:
         - if <context.args.size||0> == 0:
           - determine <player.flag[behrry.essentials.homes.name]||>
