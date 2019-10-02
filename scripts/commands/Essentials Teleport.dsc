@@ -3,7 +3,7 @@ teleport_Command:
     name: teleport
     debug: false
     description: Teleports you to the first player, or the first player to the second.
-    use: "<proc[colorize].context[/teleport <&lt>PlayerName<&gt> (<&lt>PlayerName<&gt>)*|yellow]>"
+    usage: /teleport <PlayerName> (<PlayerName>)*|yellow]>"
     aliases:
         - tp
     error:
