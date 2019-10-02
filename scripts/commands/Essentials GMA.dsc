@@ -8,8 +8,8 @@ GMA_Command:
     debug: false
     description: Adjusts your gamemode to Adventure Mode.
     admindescription: Adjusts another player's or your own gamemode to Adventure Mode
-    use: "<proc[colorize].context[/gma|yellow]>"
-    adminuse: "<proc[colorize].context[/gma (player)|yellow]>"
+    usage: /gma
+    adminusage: /gma (player)
     tab complete:
         - if <player.flag[Behrry.Essentials.Rank]> < 3:
             - if <context.args.size||0> == 0:
