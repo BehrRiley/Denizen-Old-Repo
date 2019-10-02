@@ -9,7 +9,7 @@ deathback_Command:
     name: deathback
     debug: false
     description: Returns you back your death location.
-    use: "<proc[colorize].context[/deathback|yellow]>"
+    usage: /dback
     aliases:
         - dback
     script:
