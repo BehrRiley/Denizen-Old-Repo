@@ -9,8 +9,8 @@ Nickname_Command:
     debug: true
     description: Changes your display name.
     admindescription: Changes a your own or another player's display name.
-    use: "<proc[colorize].context[/nickname <&lt>Nickname<&gt>|yellow]>"
-    adminuse: "<proc[colorize].context[/give (Player) <&lt>Nickname<&gt>|yellow]>"
+    usage: /nickname <NickName>
+    adminusage: /give (Player) <NickName>
     aliases:
         - nick
     tab complete:
