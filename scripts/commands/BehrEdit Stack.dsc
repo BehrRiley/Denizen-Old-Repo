@@ -11,7 +11,7 @@ Stack_Command:
   name: /copymove
   debug: false
   description: Copies selection in a direction, optionally only by material(s)
-  use: "<proc[colorize].context[//copymove <&lt>#<&gt> (Direction) (Material{NotAir}) |yellow]>"
+  usage: //copymove <#>> (Direction) (Material{NotAir})
   tab complete:
     - if <context.args.size||0> == 0:
       - stop
