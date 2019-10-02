@@ -3,7 +3,7 @@ Report_Command:
     name: report
     debug: true
     description: Reports a bug, an issue, or makes a suggestion directly to the coordinator.
-    use: "<proc[colorize].context[/report <&lt>message<&gt>|yellow]>"
+    usage: /report <Message>
     script:
         - if <context.args.get[1]||null> == null:
             - inject Command_Syntax Instantly
