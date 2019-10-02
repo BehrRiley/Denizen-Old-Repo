@@ -3,7 +3,7 @@ Discord_Command:
     name: discord
     debug: false
     description: Gives you the discord link.
-    use: "<proc[colorize].context[/discord|yellow]>"
+    usage: /discord
     script:
         - if <context.args.get[1]||null> != null:
             - inject Command_Syntax Instantly
