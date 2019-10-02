@@ -7,7 +7,7 @@ Rank_Command:
     name: rank
     debug: true
     description: Defines a player's rank.
-    use: "<proc[colorize].context[/rank <&lt>PlayerName<&gt> <&lt>Rank<&gt>|yellow]>"
+    usage: /rank <PlayerName> <Rank>
     tab complete:
         - if <context.args.size||0> == 0:
           - determine <server.list_online_players.parse[name]>
