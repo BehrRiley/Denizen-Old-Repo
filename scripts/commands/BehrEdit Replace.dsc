@@ -16,7 +16,7 @@ Replace_Command:
     description: Replaces a material with another material
     aliases:
       - /r
-    use: "<proc[colorize].context[//replace (Material{NotAir}) <&lt>Material<&gt>|yellow]>"
+    usage: //replace (Material{NotAir}) <Material>
     tab complete:
       - define BlackList <list[Grass|Bedrock]>
       - define list <server.list_materials.parse[to_lowercase].filter[as_material.is_block].exclude[<[BlackList]>]>
