@@ -9,7 +9,7 @@ Set_Command:
     name: /set
     debug: false
     description: Sets a selection to a material
-    use: "<proc[colorize].context[//set <&lt>Material<&gt>|yellow]>"
+    usage: //set <Material>
     tab complete:
         - define BlackList <list[Grass|Bedrock]>
         - define list <server.list_materials.parse[to_lowercase].filter[as_material.is_block].exclude[<[BlackList]>]>
