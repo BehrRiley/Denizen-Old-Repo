@@ -9,7 +9,7 @@ RestoreInventory_Command:
   - invr
   - invrestore
   - inventoryrestore
-  use: <&6>/<&e>restoreinv <&6><&lt><&e>PlayerName<&6><&gt> <&6>(<&e>1<&6>-<&e>10<&6>/<&e>Backup<&6>)
+  usage: /restoreinv <PlayerName> (1-10/Backup)
   script:
     - if <context.args.get[1]||null> == null || <context.args.get[3]||null> != null:
         - inject Command_Syntax Instantly
