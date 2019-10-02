@@ -10,7 +10,7 @@ Undo_Command:
     description: Reverses edit from undo-clipboard
     aliases:
         - /undo
-    use: "<proc[colorize].context[//undo (#)|yellow]>"
+    usage: //undo
     tab complete:
         - if <context.args.size||0> == 0:
             - determine <list[#|at:#]>
