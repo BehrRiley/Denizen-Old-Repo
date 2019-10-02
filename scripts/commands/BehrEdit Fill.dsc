@@ -5,7 +5,7 @@ Fill_Command:
     description: Fills a space with a material
     aliases:
         - /f
-    use: "<proc[colorize].context[//replace (Material{NotAir}) <&lt>Material<&gt>|yellow]>"
+    useage: //replace (Material{NotAir}) <Material>"
     Dirx:
         NORTH: 0,0,-1
         EAST: 1,0,0
