@@ -3,13 +3,15 @@ Gamerule_Command:
     name: gamerule
     debug: true
     description: Adjusts gamerules for this world.
-    use: "<proc[colorize].context[/gamerule (<&lt>GameRuleName<&gt> <&lt>Value<&gt>) |yellow]>"
+    usage: /gamerule (<&lt>GameRuleName<&gt> <&lt>Value<&gt>) |yellow]>"
     tab complete:
         - if <context.args.size||0> == 0:
             - determine <script[GameRule].list_keys.exclude[Type]>
         - else if <context.args.size> == 1 && !<context.raw_args.ends_with[<&sp>]>:
             - determine <script[GameRule].list_keys.exclude[Type].filter[starts_with[<context.args.get[1]>]]>
     script:
+        # @ not functional yet
+        - stop
         - if <context.args.get[1]||null> == null:
             - foreach <script[GameRule].list_keys.exclude[Type]> as:GameRule:
                 - define Display <proc[Colorize].context[<[GameRule]>|Yellow]>
