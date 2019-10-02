@@ -10,7 +10,7 @@ SetHome_Command:
     description: Sets a home location.
     aliases:
         - seth
-    use: "<proc[colorize].context[/sethome <&lt>HomeName<&gt>|yellow]>"
+    usage: /sethome <HomeName>
     tab complete:
         - if <player.has_flag[behrry.essentials.homes.name]>:
             - if <context.raw_args.contains_any[<player.flag[behrry.essentials.homes.name]>]>:
