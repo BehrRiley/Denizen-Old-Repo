@@ -2,6 +2,8 @@ r:
     type: command
     name: r
     debug: false
+    usage: /r
+    description: Reloads the scripts
     aliases:
         - /r
     script:
