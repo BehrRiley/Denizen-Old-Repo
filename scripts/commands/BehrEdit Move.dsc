@@ -11,7 +11,7 @@ Move_Command:
   name: /move
   debug: false
   description: Moves selection a direction, optionally only by material(s)
-  use: "<proc[colorize].context[//move <&lt>#<&gt> (Direction)|yellow]>"
+  useage: //move <#> (Direction)
   tab complete:
     - if <context.args.size||0> == 0:
       - stop
