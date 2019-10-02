@@ -4,9 +4,8 @@
 npc_skin_save_command:
     type: command
     name: saveskin
-    usage: /saveskin [name]
+    usage: /saveskin <name>
     description: Saves ye skin
-    permission: denizen.saveskin
     script:
     - inject npc_skin_validate
     - flag server npc.skin.<context.args.get[1].escaped>:<player.selected_npc.skin_blob>;<player.selected_npc.name>
@@ -14,9 +13,8 @@ npc_skin_save_command:
 npc_skin_load_command:
     type: command
     name: loadskin
-    usage: /loadskin [name]
+    usage: /loadskin <name>
     description: Loads ye skin
-    permission: denizen.saveskin
     script:
     - inject npc_skin_validate
     - if !<server.has_flag[npc.skin.<context.args.get[1].escaped>]>:
