@@ -12,8 +12,8 @@ GMC_Command:
     debug: false
     description: Adjusts your gamemode to Creative Mode.
     admindescription: Adjusts another player's or your own gamemode to Creative Mode
-    use: "<proc[colorize].context[/gmc|yellow]>"
-    adminuse: "<proc[colorize].context[/gmc (player)|yellow]>"
+    usage: /gmc
+    adminusage: /gmc (player)
     tab complete:
         - if <player.flag[Behrry.Essentials.Rank]> < 3:
             - if <context.args.size||0> == 0:
