@@ -3,8 +3,8 @@ Command_Syntax:
   debug: false
   script:
     - define Command "<queue.script.yaml_key[aliases].get[1]||<queue.script.yaml_key[Name]>> "
-    - define Hover "<&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <queue.script.yaml_key[Use].parsed>"
-    - define Message "<&6>S<&e>yntax<&6><&co> <queue.script.yaml_key[Use].parsed>"
+    - define Hover "<&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <proc[Colorize].context[<queue.script.yaml_key[Usage]>|Yellow]>"
+    - define Message "<&6>S<&e>yntax<&6><&co> <proc[Colorize].context[<queue.script.yaml_key[Usage]>|Yellow]>"
     - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
     - stop
 
@@ -13,7 +13,7 @@ Command_Error:
   debug: false
   script:
     - define Command "<queue.script.yaml_key[aliases].get[1]||<context.alias>> "
-    - define Hover "<proc[Colorize].context[You typed:|red]><&r><&nl><&c>/<context.alias> <context.raw_args><&nl><&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <queue.script.yaml_key[Use].parsed>"
+    - define Hover "<proc[Colorize].context[You typed:|red]><&r><&nl><&c>/<context.alias> <context.raw_args><&nl><&2>C<&a>lick to <&2>I<&a>nsert<&nl><&6>Syntax<&co> <proc[Colorize].context[<queue.script.yaml_key[Usage]>|Yellow]>"
     - define Message "<proc[Colorize].context[<[Reason]>|red]>"
     - narrate <proc[MsgHint].context[<[Message]>|<[Command]>|<[Hover]>]>
     - stop
