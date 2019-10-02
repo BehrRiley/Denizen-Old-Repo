@@ -11,7 +11,7 @@ Position1_Command:
   aliases:
     - /pos1
     - pos1
-  use: "<proc[colorize].context[//position1 (<&lt>X Y Z<&gt>)"
+  usage: //pos2 (<X Y Z>/X,Y,Z)
   # (Size:<&lt>#<&gt> (Direction:))|yellow]>"
   tab complete:
     - if <context.args.size||0> == 0:
@@ -63,7 +63,7 @@ Position2_Command:
   aliases:
     - /pos2
     - pos2
-  use: "<proc[colorize].context[//position2 (<&lt>X Y Z<&gt>)"
+  usage: //pos2 (<X Y Z>/X,Y,Z)
   # (Size:<&lt>#<&gt> (Direction:))|yellow]>"
   tab complete:
     - if <context.args.size||0> == 0:
