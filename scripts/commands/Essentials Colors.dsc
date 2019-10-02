@@ -3,7 +3,7 @@ Colors_Command:
     name: colors
     debug: false
     description: Lists the colors in a click-menu
-    use: <&6>/<&e>Colors
+    usage: /colors
     script:
         - if <context.args.get[1]||null> != null
             - Inject Command_Syntax Instantly
