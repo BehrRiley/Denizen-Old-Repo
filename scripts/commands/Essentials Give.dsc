@@ -9,8 +9,8 @@ Give_Command:
     debug: false
     description: Gives yourself an item.
     admindescription: gives yourself or another player an item.
-    use: "<proc[colorize].context[/give <&lt>Item<&gt> (#) (-s)|yellow]>"
-    adminuse: "<proc[colorize].context[/give <&lt>Item<&gt> (#) (-s)|yellow]>"
+    usage: /give <Item> (#) (-s)
+    adminusage: /give (PlayerName) <item> (#) (-s)
     tab complete:
         - if <context.args.size||0> == 0:
           - determine <server.list_online_players.parse[name]>
