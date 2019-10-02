@@ -6,7 +6,7 @@ inventorysee_Command:
     aliases:
       - invsee
       - inv
-    use: "<proc[colorize].context[/inventorysee <&lt>inventoryseeName<&gt> (Remove)|yellow]>"
+    usage: /inventorysee <PlayerName> (Remove)
     tab complete:
         - if <context.args.size||0> == 0:
           - determine <server.list_online_players.parse[name]>
