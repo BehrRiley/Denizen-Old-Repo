@@ -8,8 +8,8 @@ GMS_Command:
     debug: false
     description: Adjusts your gamemode to Survival Mode.
     admindescription: Adjusts another player's or your own gamemode to Survival Mode
-    use: "<proc[colorize].context[/gms|yellow]>"
-    adminuse: "<proc[colorize].context[/gms (player)|yellow]>"
+    usage: /gms
+    adminusage: /gms (player)
     tab complete:
         - if <player.flag[Behrry.Essentials.Rank]> < 3:
             - if <context.args.size||0> == 0:
