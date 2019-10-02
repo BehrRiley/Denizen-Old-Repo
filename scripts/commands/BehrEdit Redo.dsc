@@ -8,7 +8,7 @@ Redo_Command:
     name: redo
     debug: false
     description: Reverses edit from redo-clipboard
-    use: "<proc[colorize].context[//replace (Material{NotAir}) <&lt>Material<&gt>|yellow]>"
+    useage: //redo <#>>
     tab complete:
         - if <context.args.size||0> == 0:
             - determine <list[#|at:#]>
