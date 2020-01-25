@@ -98,3 +98,8 @@ If the easy Daemonheim achievements have been completed and any version of the D
 ![Dungeoneering5](https://cdn.discordapp.com/attachments/547552615450411011/556603905018953748/entry004-map2.png)
 
 `Concept arts by Sean Howard`
+
+
+##### To-Do:
+
+Config: change debug.show loading info (defaults to false)
