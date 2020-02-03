@@ -5,32 +5,32 @@
     - [Quests](../scripts/Quests) | Quest Handling scripts
         - [ ] [Shield of Arrav](../scripts/Quests/Shield%20of%20Arrav.dsc)
     - [commands](../scripts/commands)
-        - [x] [NpcSkinLoader](../scripts/commands/NpcSkinLoader.dsc) | loads NPC skin from URL
-        - [x] [NpcSkinSaver](../scripts/commands/NpcSkinSaver.dsc) | saving NPC skins for assignment loading, prevents re-loading consistently
+        - [ ] [NpcSkinLoader](../scripts/commands/NpcSkinLoader.dsc) | loads NPC skin from URL
+        - [ ] [NpcSkinSaver](../scripts/commands/NpcSkinSaver.dsc) | saving NPC skins for assignment loading, prevents re-loading consistently
     - [data](../scripts/data)
-        - [x] [formatting](../scripts/data/formatting.dsc) | all formatting scripts
+        - [ ] [formatting](../scripts/data/formatting.dsc) | all formatting scripts
         - [ ] [inventories](../scripts/data/inventories.dsc) | all inventory scripts - major rewrite for magic spellbooks
         - [ ] [iQUOP](../scripts/NPCs/iQUOP.dsc) | custom item texture procedure - major rewrite
-        - [x] [items](../scripts/NPCs/items.dsc) | all custom item scripts
+        - [ ] [items](../scripts/NPCs/items.dsc) | all custom item scripts
     - [mechanics](../scripts/mechanics)
-        - [x] [Banking](../scripts/mechanics/Banking.dsc) | Player & Admin Banking System
-        - [x] BehrEdit | World Edit Features
+        - [ ] [Banking](../scripts/mechanics/Banking.dsc) | Player & Admin Banking System
+        - [ ] BehrEdit | World Edit Features
         - [ ] [Combat](../scripts/mechanics/Combat.dsc) | Combat Algorithm - Major Rewrite
-        - [x] [DialogueOptionBuilders](../scripts/mechanics/DialogueOptionBuilders.dsc)
-        - [x] [Experience](../scripts/mechanics/Experience.dsc) | Skill Experience Algorithm
+        - [ ] [DialogueOptionBuilders](../scripts/mechanics/DialogueOptionBuilders.dsc)
+        - [ ] [Experience](../scripts/mechanics/Experience.dsc) | Skill Experience Algorithm
         - [ ] [NPCMonitors](../scripts/mechanics/NPCMonitors.dsc) | Temporary Project for verifying ease between removing options from lists
-        - [x] [PlayerDataManager](../scripts/mechanics/PlayerDataManager.dsc) | for YAML referencing additional custom player data
+        - [ ] [PlayerDataManager](../scripts/mechanics/PlayerDataManager.dsc) | for YAML referencing additional custom player data
         - [ ] [Thieving](../scripts/mechanics/Thieving.dsc) | Theiving skill - major rewrite
-        - [x] [Colorize](../scripts/mechanics/Colorize.dsc)
+        - [ ] [Colorize](../scripts/mechanics/Colorize.dsc)
     - [NPCs](../scripts/NPCs)
         - [Generic](../scripts/Quests/Generic) | Standard or recurring, generic NPCs
-            - [x] [Banker](../scripts/NPCs/!Banker.dsc)
-            - [x] [Man](../scripts/NPCs/!Man.dsc)
+            - [ ] [Banker](../scripts/NPCs/!Banker.dsc)
+            - [ ] [Man](../scripts/NPCs/!Man.dsc)
         - [Tutorial](../scripts/Quests/Tutorial) | Tutorial Specific NPCs and related Tutorial Scripts
-            - [x] [Gielinor%20Guide](../scripts/NPCs/Tutorial/Gielinor%20Guide.dsc)
-            - [x] [TutorialHandler](../scripts/NPCs/Tutorial/TutorialHandler.dsc)
-        - [x] [Template](../scripts/NPCs/!Template.dsc)
-        - [x] [Hans](../scripts/NPCs/Hans.dsc)
+            - [ ] [Gielinor%20Guide](../scripts/NPCs/Tutorial/Gielinor%20Guide.dsc)
+            - [ ] [TutorialHandler](../scripts/NPCs/Tutorial/TutorialHandler.dsc)
+        - [ ] [Template](../scripts/NPCs/!Template.dsc)
+        - [ ] [Hans](../scripts/NPCs/Hans.dsc)
         - [ ] [Baraek](../scripts/NPCs/Baraek.dsc)
         - [ ] [Charlie%20The%20Tramp](../scripts/NPCs/Charlie%20The%20Tramp.dsc)
         - [ ] [Johnny%20The%20Beard](../scripts/NPCs/Johnny%20The%20Beard.dsc)
